@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1065946316}
   m_Layer: 0
   m_Name: Seed
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   sailModifier: 1
+  mainWind: {fileID: 0}
   sail: 0
 --- !u!60 &1065946316
 PolygonCollider2D:
