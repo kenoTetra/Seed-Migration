@@ -1,0 +1,37 @@
+This font was made mostly for my comic strips*. That's why character base is 
+very limited and font have line/character spacing issues. If you want to help me
+in fixing that, I'd be grateful. This font is basically my handwritting. I'm not
+a font-maker. It was rather proof of concept of my chain of tools for generating
+fonts.
+
+The name is a wordplay on Adderall - a drug that contains amphetamines. The 
+reason to give such name is that I used fast and aggressive strokes.
+
+If you need different characters, I can do it, as long as they will be some 
+diacritics, single symbols etc.
+
+I hope you'd find some use for it. If you used it in your project, I'd be 
+grateful if you'd notice me by e-mail: addex@krzysiu.net - it's not required,
+but I like to know that my FLOSS stuff is actually used by somebody.
+
+I used following software:
+* Gimp - basic processing of scan of characters
+* Inkscape - vectorizing glyphs
+* FontForge - turning vector files into glyphs
+* Own PHP/Python scripts for automatic 1) conversion of one file in one file per
+  glyph; 2) importing separate files into single font project
+	
+Sincerely,
+Krzysztof Blachnicki (http://krzysiu.net)
+
+* http://komiks.krzysiu.net (PL) and http://krzysiu.net/en/category/comics (EN)
+
+================================================================================
+Manifesto: Stop the Windows vs. *nix vs. Mac hate
+
+I used both Windows and Linux - to create this font I needed to do a lot of 
+tasks. Some were more comfortable to me when I was using Windows, some when 
+Linux. Maybe I'd use Mac in addition, but I haven't one. Still, it's all about 
+our choice. Please, stop the hate-speech and aggression against users of other 
+operating systems.
+================================================================================
