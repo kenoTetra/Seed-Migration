@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public GameObject creditsPanel;
     public GameObject optionsPanel;
     public GameObject mainPanel;
+    public GameObject deletePanel;
     [Space(5)]
 
     [Header("References")]
@@ -36,5 +37,11 @@ public class MainMenu : MonoBehaviour
     {
         optionsPanel.SetActive(!optionsPanel.activeSelf);
         mainPanel.SetActive(!mainPanel.activeSelf);
+    }
+
+    public void deleteToggle()
+    {
+        optionsPanel.SetActive(!optionsPanel.activeSelf);
+        deletePanel.SetActive(!deletePanel.activeSelf);
     }
 }
