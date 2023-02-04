@@ -1,6 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{26474525-A675-4DB1-81A2-60751829C4EB}" SchemaVersion="110">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{26474525-A675-4DB1-81A2-60751829C4EB}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{26474525-A675-4DB1-81A2-60751829C4EB}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="acorn_detach" ID="{5780BD4B-159D-41D0-B598-B979B11448C9}">
+					<ChildrenList>
+						<Action Name="" ID="{332AB595-C617-4657-9E35-6437E7E97E76}" ShortID="375498444">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Acorn Detach" ID="{9BD666D3-39E2-4150-AF75-3AA72C123B10}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="wind_gust_light" ID="{E71B3BCE-B9AC-485E-A8F2-1301ACFC3EA4}">
+					<ChildrenList>
+						<Action Name="" ID="{A081A558-E6BF-470D-BECD-7F22360DD0FD}" ShortID="796508657">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Light Wind Gust" ID="{AB3C23E3-B04A-41DC-9396-1A581F788EB3}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="acorn_bounces" ID="{3557AD0D-9B7C-4CAD-BDB7-E75FB4DB3325}">
+					<ChildrenList>
+						<Action Name="" ID="{DF4B17F7-CE9D-4904-A9C9-838725625035}" ShortID="455908471">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Acorn Bounce" ID="{D1C32DFF-54F7-4CF2-976F-8B3C91270427}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="clock_ticking" ID="{53341C80-2998-4CC5-8A6F-9E8AEB54CBF8}">
+					<ChildrenList>
+						<Action Name="" ID="{AFEB3C83-7433-4758-B517-BBA4239D0DCC}" ShortID="908355222">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Clock" ID="{272152D4-1C9C-41C1-8812-23F0BBF3D674}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="shop_buy" ID="{B3D3D402-BF36-461E-BD67-7DE0EF973179}">
+					<ChildrenList>
+						<Action Name="" ID="{394581D5-3ED3-4AA4-89BF-5B1ABCCCE678}" ShortID="23713035">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.25"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shop Buy Silly" ID="{9AC7C6A1-F1EC-4055-8850-ED8152905FC9}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5AB27920-34C6-41D5-B61C-0EEEB44F8F02}" ShortID="696686730">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Buy" ID="{EDC54816-81C3-447D-B2C7-8A8AA4F448D4}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="shop_sell" ID="{35F6BB0C-C688-4904-B562-94DBC3937501}">
+					<ChildrenList>
+						<Action Name="" ID="{879A73E5-2D6C-484E-ADAE-B3AF4A7547C9}" ShortID="728818566">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shop Sell Silly" ID="{FC6F37BB-4A0B-47E0-986A-3D2E36175A07}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{44590BC8-BB5E-4EB5-84C8-D39AF64A8F74}" ShortID="362224336">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sell" ID="{C5D92408-F09E-4EFB-BDE7-AE0152F1988B}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="menu_confirm" ID="{1F54384D-4AC4-44CB-B7EF-309200B29B94}">
+					<ChildrenList>
+						<Action Name="" ID="{87832A07-8068-452D-8212-74909D09A258}" ShortID="816613519">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu Confirm A" ID="{80DA6C84-D01F-43FB-BD98-F081C114C3C1}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="menu_cancel" ID="{F19A967B-C2CE-4F51-A93D-7E62DE8A3A2A}">
+					<ChildrenList>
+						<Action Name="" ID="{86E7D60B-0697-4CD9-8DDE-2FD80991C504}" ShortID="73246993">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu Cancel" ID="{7AD5C954-C296-49CB-BDB3-06972B22B6D3}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="menu_hover" ID="{6AC2DB0B-2374-4190-B246-D21729E4056D}">
+					<ChildrenList>
+						<Action Name="" ID="{54B7EBA6-C617-49B8-B7DF-1294A0935EC6}" ShortID="445059182">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu Hover" ID="{863F355E-992B-4DA5-8DC7-6D17B08FF949}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="game_start" ID="{9C2E7E12-C1EC-42B8-9246-C11B5D8B7BCE}">
+					<ChildrenList>
+						<Action Name="" ID="{2B2BD9A0-6DC6-4D79-9E60-7D92F8DE7BBD}" ShortID="249979856">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Game Start A" ID="{DC7930B9-8A0B-4382-9DE9-24982F154F18}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C280FB95-4341-49F4-8458-85E8C5E30F52}" ShortID="514494752">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Axe 1016_69" ID="{795A647D-1935-40AE-9874-9B38F208BEBC}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9FDFD18B-C693-4B30-AE10-148A8799A596}" ShortID="460221612">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BG 1" ID="{5A8A82F4-FB28-4E5A-9A6E-47C4E5AFD1C3}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="rocket_thrusters" ID="{D36D24B3-6354-484D-8FFA-537C0D8FEF70}">
+					<ChildrenList>
+						<Action Name="" ID="{83BE3599-85D3-4C5B-B76D-D3F1EBE35FA2}" ShortID="468382194">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rocket_Thrusters_Start" ID="{33620B84-F5EC-4D8B-A858-496ACB79BE94}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0079B831-37C9-4125-93D9-8767D4365A24}" ShortID="707111896">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.25"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rocket_Thrusters_Loop" ID="{4693377F-78A8-43C4-B8C0-1E430E1355CC}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="wind_gust_heavy" ID="{B5ED2474-6D8F-4A2C-804F-78F606E84F0B}">
+					<ChildrenList>
+						<Action Name="" ID="{F8DE1D83-E103-491C-BE58-F2EA3E7BA1E1}" ShortID="71472124">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heavy Wind Gust" ID="{1716E5A7-191A-45CD-B465-6E7F1850018B}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ambience" ID="{AA72143B-7CFB-496B-9194-AF717A630C85}">
+					<ChildrenList>
+						<Action Name="" ID="{D8D4C022-CF17-4CE4-8677-36BCB6DEB47B}" ShortID="1044984648">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BG 1" ID="{5A8A82F4-FB28-4E5A-9A6E-47C4E5AFD1C3}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="sail_open" ID="{F87A498B-EBC7-4819-A366-3C110166A446}">
+					<ChildrenList>
+						<Action Name="" ID="{5C1B5B6D-997F-4B76-B281-F4235D695A10}" ShortID="1030923088">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sail" ID="{DA7F7807-1EF9-4BD1-8334-E10B5A2855F0}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
