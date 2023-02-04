@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: AddeX SDF
+  m_Name: AddeX SDF 1
   m_EditorClassIdentifier: 
-  hashCode: 1151847405
+  hashCode: 231374716
   material: {fileID: 7754107567864415034}
-  materialHashCode: 626849837
+  materialHashCode: 1424606044
   m_Version: 1.1.0
   m_SourceFontFileGUID: edf277014261444428521c262ee55386
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: edf277014261444428521c262ee55386, type: 3}
@@ -2105,7 +2105,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.1
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
