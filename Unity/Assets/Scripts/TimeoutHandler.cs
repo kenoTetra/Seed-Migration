@@ -14,7 +14,9 @@ public class TimeoutHandler : MonoBehaviour
     private float timer;
     private float noClockSpawn;
     public float timeoutTime = 4f;
+    public float preventTime = .33f;
     private bool timedOut;
+    private bool canTimeout;
     [Space(5)]
 
     [Header("References")]
@@ -39,9 +41,15 @@ public class TimeoutHandler : MonoBehaviour
             noClockSpawn += Time.deltaTime;
         }
         
-        if((rb.velocity.magnitude <= 0.2f || Vector2.Dot(rb.velocity, Vector2.right) < 0.0f) && !timedOut && rb.simulated && noClockSpawn > 1f)
+        if((rb.velocity.magnitude <= 0.2f || Vector2.Dot(rb.velocity, Vector2.right) < 0.0f) && !timedOut && rb.simulated && noClockSpawn > 1f && canTimeout)
         {
             StartCoroutine(timeoutPlayer());
+        }
+
+        if(rb.velocity.magnitude > 0.35f)
+        {
+            StopCoroutine(timeoutPlayer());
+            StartCoroutine(preventTimeout());
         }
     }
     
@@ -61,13 +69,16 @@ public class TimeoutHandler : MonoBehaviour
             timedOut = true;
             yield break;
         }
+    }
 
-        // if the acorn moves, stop everything!
-        if(rb.velocity.magnitude > 0.2f)
-        {
-            clock.SetActive(false);
-            timer = 0f;
-            yield break;
-        }
+    private IEnumerator preventTimeout()
+    {
+        canTimeout = false;
+
+        yield return new WaitForSeconds(preventTime);
+
+        canTimeout = true;
+
+        yield break;
     }
 }
