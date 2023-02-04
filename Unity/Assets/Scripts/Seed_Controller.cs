@@ -7,6 +7,10 @@ public class Seed_Controller : MonoBehaviour
     public bool grounded;
     public RaycastHit2D downRay;
     public LayerMask groundLayer;
+    public float sailModifier;
+
+    // Upgrades
+    public int sail;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +43,11 @@ public class Seed_Controller : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        // Catches the wind
         if (collision.name == "Wind")
         {
             GetComponent<Rigidbody2D>().AddForce(collision.transform.right * collision.GetComponent<Wind_Script>().strength);
+            GetComponent<Rigidbody2D>().AddForce(transform.up * (collision.GetComponent<Wind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail / sailModifier));
         }
     }
 }
