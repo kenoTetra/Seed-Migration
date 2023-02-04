@@ -12,6 +12,11 @@ public class MainMenu : MonoBehaviour
     public GameObject mainPanel;
     [Space(5)]
 
+    [Header("Scene Info")]
+    public string sceneName;
+    public Animator animator;
+    [Space(5)]
+
     [Header("References")]
     private OptionsScript os;
 
@@ -19,11 +24,6 @@ public class MainMenu : MonoBehaviour
     {
         os = FindObjectOfType<OptionsScript>();
         os.loadGraphics();
-    }
-
-    public void nextScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void quit()
@@ -41,5 +41,16 @@ public class MainMenu : MonoBehaviour
     {
         optionsPanel.SetActive(!optionsPanel.activeSelf);
         mainPanel.SetActive(!mainPanel.activeSelf);
+    }
+
+    public void startGame(string scene)
+    {
+        sceneName = scene;
+        animator.SetBool("Fade", true);
+    }
+
+    public void nextScene()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
