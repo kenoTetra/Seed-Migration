@@ -41,7 +41,7 @@ public class Seed_Controller : MonoBehaviour
     {
         if (collision.name == "Wind")
         {
-            GetComponent<Rigidbody2D>().AddForce(collision.transform.right * 20.0f);
+            GetComponent<Rigidbody2D>().AddForce(collision.transform.right * collision.GetComponent<Wind_Script>().strength);
         }
     }
 }
