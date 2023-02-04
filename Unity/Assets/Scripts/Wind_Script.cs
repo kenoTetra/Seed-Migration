@@ -15,6 +15,7 @@ public class Wind_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Gets the particle emitter variables
         var particleSpeed = GetComponent<ParticleSystem>().main;
         var particleEmission = GetComponent<ParticleSystem>().emission;
         particleSpeed.startSpeedMultiplier = strength / 10.0f;
