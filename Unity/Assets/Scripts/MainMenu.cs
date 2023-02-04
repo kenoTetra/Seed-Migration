@@ -13,6 +13,11 @@ public class MainMenu : MonoBehaviour
     public GameObject deletePanel;
     [Space(5)]
 
+    [Header("Buttons")]
+    public GameObject startButton;
+    public GameObject continueButton;
+    [Space(5)]
+
     [Header("References")]
     private OptionsScript os;
 
@@ -20,6 +25,11 @@ public class MainMenu : MonoBehaviour
     {
         os = FindObjectOfType<OptionsScript>();
         os.loadGraphics();
+
+        if(PlayerPrefs.HasKey("Score"))
+        {
+            continueToggle();
+        }
     }
 
     public void quit()
@@ -43,5 +53,11 @@ public class MainMenu : MonoBehaviour
     {
         optionsPanel.SetActive(!optionsPanel.activeSelf);
         deletePanel.SetActive(!deletePanel.activeSelf);
+    }
+
+    public void continueToggle()
+    {
+        startButton.SetActive(!startButton.activeSelf);
+        continueButton.SetActive(!continueButton.activeSelf);
     }
 }

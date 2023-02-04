@@ -13,6 +13,9 @@ public class Seed_Controller : MonoBehaviour
     // Upgrades
     public int sail;
 
+    // Hint Text
+    public GameObject hintText;
+
     // References
     private Rigidbody2D rb;
 
@@ -27,6 +30,7 @@ public class Seed_Controller : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
+            hintText.SetActive(false);
             mainWind.SetActive(true);
             rb.simulated = true;
         }

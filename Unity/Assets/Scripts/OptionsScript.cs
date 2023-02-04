@@ -15,8 +15,6 @@ public class OptionsScript : MonoBehaviour
 
     void Start()
     {
-        loadGraphics();
-
         // find the player's current resolution and select it
         for(int i = 0; i < resolutions.Count; i++)
         {

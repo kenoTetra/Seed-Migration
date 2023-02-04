@@ -12,6 +12,7 @@ public class TimeoutHandler : MonoBehaviour
 
     [Header("Timers")]
     private float timer;
+    private float noClockSpawn;
     public float timeoutTime = 4f;
     private bool timedOut;
     [Space(5)]
@@ -33,7 +34,12 @@ public class TimeoutHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rb.velocity == Vector2.zero && !timedOut && rb.simulated)
+        if(rb.simulated)
+        {
+            noClockSpawn += Time.deltaTime;
+        }
+        
+        if(rb.velocity == Vector2.zero && !timedOut && rb.simulated && noClockSpawn > 1f)
         {
             StartCoroutine(timeoutPlayer());
         }

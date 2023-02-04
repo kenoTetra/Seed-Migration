@@ -8,6 +8,12 @@ public class DeleteData : MonoBehaviour
 {
     public GameObject deletePanel;
     public GameObject optionsPanel;
+    private MainMenu mm;
+
+    void Start()
+    {
+        mm = FindObjectOfType<MainMenu>();
+    }
 
     public void goBack()
     {
@@ -17,6 +23,11 @@ public class DeleteData : MonoBehaviour
 
     public void deleteData()
     {
+        if(PlayerPrefs.HasKey("Score"))
+        {
+            mm.continueToggle();
+        }
+        
         PlayerPrefs.DeleteAll();
         goBack();
     }
