@@ -9,8 +9,10 @@ public class TransitionHandler : MonoBehaviour
     public string sceneName;
     public Animator animator;
 
+    // USE THIS ONE!!!!!!!!!! USE THIS ONE!!!!!!!!!!!!!! USE THIS ONE!!!!!!!!!!!!!!!1
     public void changeScene(string scene)
     {
+        // fades out the screen, animation will call next scene!
         sceneName = scene;
         animator.SetBool("Fade", true);
     }
