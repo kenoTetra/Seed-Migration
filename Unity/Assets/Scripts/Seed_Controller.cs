@@ -12,6 +12,8 @@ public class Seed_Controller : MonoBehaviour
 
     // Upgrades
     public int sail;
+    public int gravity;
+    public int weight;
 
     // Hint Text
     public GameObject hintText;
@@ -23,6 +25,9 @@ public class Seed_Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        rb.gravityScale = 0.25f * (1.0f - 0.125f * gravity);
+        rb.mass = 4.0f * (1.0f - 0.0625f * weight);
     }
 
     // Update is called once per frame

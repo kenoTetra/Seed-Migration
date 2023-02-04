@@ -39,7 +39,7 @@ public class TimeoutHandler : MonoBehaviour
             noClockSpawn += Time.deltaTime;
         }
         
-        if(rb.velocity == Vector2.zero && !timedOut && rb.simulated && noClockSpawn > 1f)
+        if((rb.velocity.magnitude <= 0.2f || Vector2.Dot(rb.velocity, Vector2.right) < 0.0f) && !timedOut && rb.simulated && noClockSpawn > 1f)
         {
             StartCoroutine(timeoutPlayer());
         }
@@ -63,7 +63,7 @@ public class TimeoutHandler : MonoBehaviour
         }
 
         // if the acorn moves, stop everything!
-        if(rb.velocity != Vector2.zero)
+        if(rb.velocity.magnitude > 0.2f)
         {
             clock.SetActive(false);
             timer = 0f;

@@ -6817,10 +6817,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1065946315, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
-      propertyPath: sail
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065946315, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
       propertyPath: hintText
       value: 
       objectReference: {fileID: 1143458394}
@@ -6828,10 +6824,6 @@ PrefabInstance:
       propertyPath: mainWind
       value: 
       objectReference: {fileID: 6657961847947543612}
-    - target: {fileID: 845651198232919414, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
-      propertyPath: m_Simulated
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 845651198232919415, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
       propertyPath: m_Name
       value: Seed

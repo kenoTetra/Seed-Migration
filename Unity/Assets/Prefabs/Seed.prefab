@@ -96,7 +96,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845651198232919415}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 4
@@ -127,6 +127,9 @@ MonoBehaviour:
   sailModifier: 1
   mainWind: {fileID: 0}
   sail: 0
+  gravity: 0
+  weight: 0
+  hintText: {fileID: 0}
 --- !u!60 &5568644605321107805
 PolygonCollider2D:
   m_ObjectHideFlags: 0
