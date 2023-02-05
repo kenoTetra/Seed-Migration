@@ -33,4 +33,10 @@ public class WWiseEvents : MonoBehaviour
         Debug.Log("This is so sad, can we hit 30 children?");
         AkSoundEngine.PostEvent("save_delete", gameObject);
     }
+
+    public void onReturn()
+    {
+        Debug.Log("Return to main menu");
+        AkSoundEngine.PostEvent("menu_return", gameObject);
+    }
 }
