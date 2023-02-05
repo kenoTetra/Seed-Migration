@@ -2140,7 +2140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: price
-      value: 50
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: title
