@@ -1277,6 +1277,11 @@
 										<Value>500</Value>
 									</ValueList>
 								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1304,6 +1309,11 @@
 								<Property Name="OutputBusHighpass" Type="int16">
 									<ValueList>
 										<Value>25</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
