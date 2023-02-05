@@ -39,9 +39,22 @@
 				<Event Name="clock_ticking" ID="{53341C80-2998-4CC5-8A6F-9E8AEB54CBF8}">
 					<ChildrenList>
 						<Action Name="" ID="{AFEB3C83-7433-4758-B517-BBA4239D0DCC}" ShortID="908355222">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="4"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Clock" ID="{272152D4-1C9C-41C1-8812-23F0BBF3D674}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4B62C711-70E2-4F1D-BB70-CF7240660EED}" ShortID="397517105">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Backgrounds" ID="{535B2BCB-74C7-41F4-B0F2-FB57FBF5CFA8}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -135,14 +148,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{9FDFD18B-C693-4B30-AE10-148A8799A596}" ShortID="460221612">
+						<Action Name="" ID="{67E1A538-8D28-4A32-BEC3-FC3FCE99146B}" ShortID="452405500">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
-								<Property Name="FadeTime" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="BG 1" ID="{5A8A82F4-FB28-4E5A-9A6E-47C4E5AFD1C3}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+									<ObjectRef Name="Backgrounds" ID="{535B2BCB-74C7-41F4-B0F2-FB57FBF5CFA8}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -182,10 +194,10 @@
 				</Event>
 				<Event Name="ambience" ID="{AA72143B-7CFB-496B-9194-AF717A630C85}">
 					<ChildrenList>
-						<Action Name="" ID="{D8D4C022-CF17-4CE4-8677-36BCB6DEB47B}" ShortID="1044984648">
+						<Action Name="" ID="{8C2062A1-E1EE-4870-BF54-64B586DE583D}" ShortID="708575845">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="BG 1" ID="{5A8A82F4-FB28-4E5A-9A6E-47C4E5AFD1C3}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+									<ObjectRef Name="Backgrounds" ID="{535B2BCB-74C7-41F4-B0F2-FB57FBF5CFA8}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -229,6 +241,46 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="shop max" ID="{210F4C49-D1A8-40D4-A3EA-D94E11A48297}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="music_shop" ID="{551720C3-32BF-4F30-B708-6DDE90245FC7}">
+					<ChildrenList>
+						<Action Name="" ID="{54DE8C51-D4F6-429D-8E93-180227EB6162}" ShortID="586677505">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shop music" ID="{359ABB07-0B26-4F9E-B7BF-877223352A90}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="menu_return" ID="{C915D6B5-F368-4441-A100-8013CA67D24B}">
+					<ChildrenList>
+						<Action Name="" ID="{589B77D8-43A0-4265-B5CA-E698D76C9C05}" ShortID="927713358">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Axe 1016_69" ID="{795A647D-1935-40AE-9874-9B38F208BEBC}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6F023CB6-60FF-46DB-AE5E-23DA294D5887}" ShortID="879754367">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Game Start B" ID="{2789D272-A98F-4578-81C9-BD153A7EA5A6}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A267460E-4C29-4ABE-84ED-521C8CB99230}" ShortID="439257610">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shop music" ID="{359ABB07-0B26-4F9E-B7BF-877223352A90}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

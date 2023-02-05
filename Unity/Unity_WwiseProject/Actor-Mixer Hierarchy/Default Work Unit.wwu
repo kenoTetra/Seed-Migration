@@ -647,6 +647,28 @@
 								<ActiveSource Name="shop max" ID="{E3DAF492-CFC2-45D0-8DF2-AEAB3B0AD938}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Game Start B" ID="{2789D272-A98F-4578-81C9-BD153A7EA5A6}" ShortID="271538067">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C00F25C1-59E0-46ED-8E09-F2C8E2A66CD9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4A22707A-6017-4F89-9153-A4A6C24DE925}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Game Start B" ID="{29DC76B7-129B-4E5C-9650-DB34138448FD}">
+									<Language>SFX</Language>
+									<AudioFile>Game Start B.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="12958296"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Game Start B" ID="{29DC76B7-129B-4E5C-9650-DB34138448FD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<RandomSequenceContainer Name="Light Wind Gust" ID="{AB3C23E3-B04A-41DC-9396-1A581F788EB3}" ShortID="489654496">
@@ -1123,44 +1145,121 @@
 								<ActiveSource Name="Sell" ID="{C39C420A-115C-4A1E-9BE5-8774423A07DA}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Shop music" ID="{359ABB07-0B26-4F9E-B7BF-877223352A90}" ShortID="1046457994">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C00F25C1-59E0-46ED-8E09-F2C8E2A66CD9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4A22707A-6017-4F89-9153-A4A6C24DE925}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Shop music" ID="{BAC1F7F9-9E8F-4E9B-8889-2A4977BE1C0C}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Shop music.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="204446405"/>
+									</MediaIDList>
+									<PluginInnerObjectList>
+										<List Name="Markers">
+											<PluginInnerObject Name="" ID="{9DBF648F-3053-4073-8EF9-BE617EF86C89}" PluginName="Marker" CompanyID="0" PluginID="993"/>
+											<PluginInnerObject Name="" ID="{6665B7A6-FB41-495C-B4C2-38971146B127}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="4.10258503401361"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{D25D6FEE-0A9E-4E4C-8C9B-8B83DE2A32AF}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="8.20514739229025"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{A6A45A94-2DAC-414C-8842-9EDB7CF1F31C}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="12.3077097505669"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{C7E39F59-D973-4875-9354-E52E559320F5}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="16.4102721088435"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{FA518C27-890C-4F17-B748-2A1C0A8DC025}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="20.5128344671202"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{1C26B3FE-9024-4EE9-A935-47E078A7C4CD}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="24.6153968253968"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{118E8DA5-E104-4D25-A9A2-58A3C2783303}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="28.7179591836735"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{349B3A40-DC89-43B2-927D-6DC380440BED}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="32.8205215419501"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{FA8C06CF-CAD8-445C-B6AC-BDDFAF0A05A1}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="36.9230839002268"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{33E353E0-D0D1-405D-B58E-B6F2A4CDD67C}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="41.0256462585034"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{F296B192-2014-4E0A-8D82-DE7C3AF8F4F0}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="45.12820861678"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{E95576CA-EC28-4F37-A11F-07F51B436E6F}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="49.2307709750567"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{5E3E6D11-131B-4C5C-AEFF-D63F773F2E39}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="53.3333560090703"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{00DA81BA-62B5-4EBF-9529-924EFC397662}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="57.4359183673469"/>
+												</PropertyList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{6FAD9C06-E995-42AF-ACD5-AB4B9034CCF2}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Time" Type="Real64" Value="61.5384807256236"/>
+												</PropertyList>
+											</PluginInnerObject>
+										</List>
+									</PluginInnerObjectList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Shop music" ID="{BAC1F7F9-9E8F-4E9B-8889-2A4977BE1C0C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
-				<Sound Name="BG 1" ID="{5A8A82F4-FB28-4E5A-9A6E-47C4E5AFD1C3}" ShortID="334367867">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C00F25C1-59E0-46ED-8E09-F2C8E2A66CD9}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4A22707A-6017-4F89-9153-A4A6C24DE925}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="BG 1" ID="{EA61D830-8E85-476B-98A5-F880E2343035}">
-							<PropertyList>
-								<Property Name="CrossfadeDuration" Type="Real64" Value="5000"/>
-								<Property Name="CrossfadeShape" Type="int16" Value="0"/>
-								<Property Name="FadeInDuration" Type="Real64" Value="1.28167502726281"/>
-								<Property Name="FadeOutDuration" Type="Real64" Value="2.99057506361325"/>
-								<Property Name="LoopBegin" Type="Real64" Value="55.112026172301"/>
-								<Property Name="LoopEnd" Type="Real64" Value="153.587390766994"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="18.1570628862232"/>
-								<Property Name="TrimEnd" Type="Real64" Value="178.152828789531"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>BG 1.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="80710655"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="BG 1" ID="{EA61D830-8E85-476B-98A5-F880E2343035}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<RandomSequenceContainer Name="Sail" ID="{DA7F7807-1EF9-4BD1-8334-E10B5A2855F0}" ShortID="458302958">
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -1362,6 +1461,98 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<RandomSequenceContainer Name="Backgrounds" ID="{535B2BCB-74C7-41F4-B0F2-FB57FBF5CFA8}" ShortID="355202765">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C00F25C1-59E0-46ED-8E09-F2C8E2A66CD9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4A22707A-6017-4F89-9153-A4A6C24DE925}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="BG 1" ID="{5A8A82F4-FB28-4E5A-9A6E-47C4E5AFD1C3}" ShortID="334367867">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C00F25C1-59E0-46ED-8E09-F2C8E2A66CD9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4A22707A-6017-4F89-9153-A4A6C24DE925}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BG 1" ID="{EA61D830-8E85-476B-98A5-F880E2343035}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="5000"/>
+										<Property Name="CrossfadeShape" Type="int16" Value="0"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.28167502726281"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="2.99057506361325"/>
+										<Property Name="LoopBegin" Type="Real64" Value="55.112026172301"/>
+										<Property Name="LoopEnd" Type="Real64" Value="153.587390766994"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="18.1570628862232"/>
+										<Property Name="TrimEnd" Type="Real64" Value="178.152828789531"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>BG 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="80710655"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BG 1" ID="{EA61D830-8E85-476B-98A5-F880E2343035}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BG 2" ID="{8BD952D6-3B2C-45B3-A8E2-E88C6C156F2C}" ShortID="794835063">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>25</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-14</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C00F25C1-59E0-46ED-8E09-F2C8E2A66CD9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4A22707A-6017-4F89-9153-A4A6C24DE925}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="31766__slanesh__foret-oiseau" ID="{02E091CC-43E8-4D93-835F-2786E0853C5C}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="500"/>
+										<Property Name="CrossfadeShape" Type="int16" Value="0"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.11536900058422"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.182514927368327"/>
+										<Property Name="LoopBegin" Type="Real64" Value="1.11536900058422"/>
+										<Property Name="LoopEnd" Type="Real64" Value="17.2375209181198"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>31766__slanesh__foret-oiseau.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="843919112"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="31766__slanesh__foret-oiseau" ID="{02E091CC-43E8-4D93-835F-2786E0853C5C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
