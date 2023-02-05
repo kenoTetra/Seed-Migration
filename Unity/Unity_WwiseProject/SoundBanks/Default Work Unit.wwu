@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{4D3596B7-9CB6-4846-99DF-4041CC857638}" SchemaVersion="110">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{4D3596B7-9CB6-4846-99DF-4041CC857638}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4D3596B7-9CB6-4846-99DF-4041CC857638}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{77FFD56C-4787-40FD-8B70-27FB1BDD0E48}">
+					<ObjectInclusionList>
+						<ObjectRef Name="menu_hover" ID="{6AC2DB0B-2374-4190-B246-D21729E4056D}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="acorn_detach" ID="{5780BD4B-159D-41D0-B598-B979B11448C9}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="game_start" ID="{9C2E7E12-C1EC-42B8-9246-C11B5D8B7BCE}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="menu_confirm" ID="{1F54384D-4AC4-44CB-B7EF-309200B29B94}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="shop_buy" ID="{B3D3D402-BF36-461E-BD67-7DE0EF973179}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="sail_open" ID="{F87A498B-EBC7-4819-A366-3C110166A446}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="rocket_thrusters" ID="{D36D24B3-6354-484D-8FFA-537C0D8FEF70}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="wind_gust_light" ID="{E71B3BCE-B9AC-485E-A8F2-1301ACFC3EA4}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="shop_sell" ID="{35F6BB0C-C688-4904-B562-94DBC3937501}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ambience" ID="{AA72143B-7CFB-496B-9194-AF717A630C85}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="wind_gust_heavy" ID="{B5ED2474-6D8F-4A2C-804F-78F606E84F0B}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="acorn_bounces" ID="{3557AD0D-9B7C-4CAD-BDB7-E75FB4DB3325}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="clock_ticking" ID="{53341C80-2998-4CC5-8A6F-9E8AEB54CBF8}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="menu_cancel" ID="{F19A967B-C2CE-4F51-A93D-7E62DE8A3A2A}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>
