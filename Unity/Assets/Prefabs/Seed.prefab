@@ -132,6 +132,8 @@ MonoBehaviour:
   germinationCDTimer: 0
   germinating: 0
   germinatingBounce: 0
+  scoreHandler: {fileID: 0}
+  leafPowerTimer: 0
   sail: 0
   gravity: 0
   weight: 0
@@ -143,6 +145,8 @@ MonoBehaviour:
   germinationDuration: 0
   germinationCooldown: 0
   windPower: 0
+  leafPower: 0
+  pointPower: 0
   hintText: {fileID: 0}
 --- !u!60 &5568644605321107805
 PolygonCollider2D:

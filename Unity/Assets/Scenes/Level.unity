@@ -1541,6 +1541,8 @@ MonoBehaviour:
   - {fileID: 284984931}
   windPrefab: {fileID: 345846265228706931, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
   windPower: {fileID: 9077976109641720452, guid: 5174187e3d6c84b45a12ccf826a661ff, type: 3}
+  leafPower: {fileID: 5568904267100586618, guid: f38738c18d0949c46b2230a29fad0ef4, type: 3}
+  pointPower: {fileID: 7915846989236942751, guid: 5ed6318f9a3af6b4cb7eed74c03bbefb, type: 3}
 --- !u!4 &1842696404
 Transform:
   m_ObjectHideFlags: 0
@@ -1746,6 +1748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1824932690}
   scoreHeader: 'Score: '
+  scoreBonus: 0
 --- !u!4 &1951409098
 Transform:
   m_ObjectHideFlags: 0
@@ -6652,6 +6655,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1065946315, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
+      propertyPath: sail
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065946315, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
       propertyPath: hintText
       value: 
       objectReference: {fileID: 1143458394}
@@ -6659,6 +6666,22 @@ PrefabInstance:
       propertyPath: mainWind
       value: 
       objectReference: {fileID: 6657961847947543612}
+    - target: {fileID: 1065946315, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
+      propertyPath: leafPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065946315, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
+      propertyPath: windPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065946315, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
+      propertyPath: pointPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065946315, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
+      propertyPath: scoreHandler
+      value: 
+      objectReference: {fileID: 1951409096}
     - target: {fileID: 845651198232919415, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
       propertyPath: m_Name
       value: Seed
