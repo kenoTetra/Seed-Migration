@@ -260,9 +260,22 @@
 				<Event Name="music_shop" ID="{551720C3-32BF-4F30-B708-6DDE90245FC7}">
 					<ChildrenList>
 						<Action Name="" ID="{54DE8C51-D4F6-429D-8E93-180227EB6162}" ShortID="586677505">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Shop music" ID="{359ABB07-0B26-4F9E-B7BF-877223352A90}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D5777AE2-3A0A-4C59-8082-857B376EFC43}" ShortID="609097823">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Backgrounds" ID="{535B2BCB-74C7-41F4-B0F2-FB57FBF5CFA8}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
