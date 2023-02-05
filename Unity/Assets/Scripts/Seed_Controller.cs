@@ -10,12 +10,16 @@ public class Seed_Controller : MonoBehaviour
     public float sailModifier;
     public GameObject mainWind;
     public float windModifier;
+    public float fuelTank;
 
     // Upgrades
     public int sail;
     public int gravity;
     public int weight;
     public int wind;
+    public bool rocket;
+    public int rocketStrength;
+    public int rocketFuel;
 
     // Hint Text
     public GameObject hintText;
@@ -30,6 +34,8 @@ public class Seed_Controller : MonoBehaviour
 
         rb.gravityScale = 0.5f * (1.0f - 0.125f * gravity);
         rb.mass = 2.0f * (1.0f - 0.0625f * weight);
+
+        fuelTank = 5.0f + (5.0f * rocketFuel);
     }
 
     // Update is called once per frame
@@ -68,6 +74,13 @@ public class Seed_Controller : MonoBehaviour
             {
                 rb.AddTorque(-horizInput);
             }    
+        }
+
+        // Rocket Time
+        if (rocket && fuelTank > 0.0f && Input.GetButton("Fire1"))
+        {
+            rb.AddForce(transform.up * (2.0f + rocketStrength * 1.0f));
+            fuelTank -= Time.deltaTime;
         }
     }
 
