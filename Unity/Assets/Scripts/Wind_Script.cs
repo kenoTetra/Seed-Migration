@@ -5,6 +5,7 @@ using UnityEngine;
 public class Wind_Script : MonoBehaviour
 {
     public float strength;
+    public GameObject cameraObject;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,10 @@ public class Wind_Script : MonoBehaviour
         particleSpeed.startSpeedMultiplier = strength / 10.0f;
         particleSpeed.startLifetimeMultiplier = 6 / strength;
         particleEmission.rateOverTimeMultiplier = strength / 2;
+
+        if (transform.position.x + 25.0f <= cameraObject.transform.position.x)
+        {
+            Destroy(this);
+        }
     }
 }

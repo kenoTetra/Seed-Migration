@@ -124,7 +124,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  sailModifier: 4
+  sailModifier: 3.5
   mainWind: {fileID: 0}
   windModifier: 0.0625
   fuelTank: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   germinationCDTimer: 0
   germinating: 0
   germinatingBounce: 0
-  sail: 1
+  sail: 0
   gravity: 0
   weight: 0
   wind: 0
@@ -142,6 +142,7 @@ MonoBehaviour:
   germination: 0
   germinationDuration: 0
   germinationCooldown: 0
+  windPower: 0
   hintText: {fileID: 0}
 --- !u!60 &5568644605321107805
 PolygonCollider2D:

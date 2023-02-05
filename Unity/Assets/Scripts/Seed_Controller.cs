@@ -28,6 +28,9 @@ public class Seed_Controller : MonoBehaviour
     public int germinationDuration;
     public int germinationCooldown;
 
+    // Powers
+    public bool windPower;
+
     // Hint Text
     public GameObject hintText;
 
@@ -131,6 +134,12 @@ public class Seed_Controller : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        // Collects the Wind Power
+        if (collision.name == "WindPower(Clone)")
+        {
+            collision.GetComponent<WindPowerScript>().Activate();
+        }
+
         // Catches the wind
         if (collision.name == "Wind(Clone)")
         {
