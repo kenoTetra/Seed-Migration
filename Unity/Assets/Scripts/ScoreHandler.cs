@@ -10,7 +10,7 @@ public class ScoreHandler : MonoBehaviour
     [Header("Seed Data")]
     private GameObject seed;
     private float startX;
-    private float distanceTraveled;
+    public float distanceTraveled;
     [Space(5)]
 
     [Header("Score Data")]

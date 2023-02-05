@@ -6,6 +6,7 @@ public class Looping_Script : MonoBehaviour
 {
     public GameObject cameraObject;
     public GameObject seed;
+    public ScoreHandler scoreHandler;
 
     public GameObject groundPrefab;
     public GameObject[] ground;
@@ -67,29 +68,33 @@ public class Looping_Script : MonoBehaviour
             // Makes more wind currents upwards
             do
             {
-                newPrefab = Instantiate(windPrefab, new Vector3(ground[groundIndex].transform.position.x + Random.Range(0.5f, 12.0f), Random.Range(incHeight, incHeight + 8.0f), 0.0f), Quaternion.Euler(0.0f, 0.0f, Random.Range(-15.0f, 50.0f)));
-                newPrefab.GetComponent<Wind_Script>().strength = Random.Range(4.0f, 15.0f);
-                newPrefab.GetComponent<Wind_Script>().cameraObject = cameraObject;
-                newPrefab.transform.localScale = new Vector3(Random.Range(2.0f, 10.0f), Random.Range(0.75f, 4.0f), 1.0f);
+                if (Random.Range(0.0f, 1.0f) >= scoreHandler.distanceTraveled / 5000.0f)
+                {
+                    newPrefab = Instantiate(windPrefab, new Vector3(ground[groundIndex].transform.position.x + Random.Range(0.5f, 12.0f), Random.Range(incHeight, incHeight + 8.0f), 0.0f), Quaternion.Euler(0.0f, 0.0f, Random.Range(-15.0f, 50.0f)));
+                    newPrefab.GetComponent<Wind_Script>().strength = Random.Range(4.0f, 15.0f);
+                    newPrefab.GetComponent<Wind_Script>().cameraObject = cameraObject;
+                    newPrefab.transform.localScale = new Vector3(Random.Range(2.0f, 10.0f), Random.Range(0.75f, 4.0f), 1.0f);
+                }
+
                 incHeight += 8.0f;
             } while (incHeight <= cameraObject.transform.position.y + 12.0f);
 
-            if (seed.GetComponent<Seed_Controller>().windPower && Random.Range(0.0f, 1.0f) >= 0.2f)
+            if (seed.GetComponent<Seed_Controller>().windPower && Random.Range(0.0f, 1.0f) >= 0.2f + (0.8 * scoreHandler.distanceTraveled / 5000.0f))
             {
                 newPrefab = Instantiate(windPower, new Vector2(ground[groundIndex].transform.position.x + Random.Range(-12.5f, 12.5f), Mathf.Max(cameraObject.transform.position.y + Random.Range(-10.0f, 10.0f), -2.0f)), Quaternion.identity);
                 newPrefab.GetComponent<WindPowerScript>().cameraObject = cameraObject;
             }
-            if (seed.GetComponent<Seed_Controller>().leafPower && Random.Range(0.0f, 1.0f) >= 0.2f)
+            if (seed.GetComponent<Seed_Controller>().leafPower && Random.Range(0.0f, 1.0f) >= 0.2f + (0.8 * scoreHandler.distanceTraveled / 5000.0f))
             {
                 newPrefab = Instantiate(leafPower, new Vector2(ground[groundIndex].transform.position.x + Random.Range(-12.5f, 12.5f), Mathf.Max(cameraObject.transform.position.y + Random.Range(-10.0f, 10.0f), -2.0f)), Quaternion.identity);
                 newPrefab.GetComponent<WorldObjectDestroy_Script>().cameraObject = cameraObject;
             }
-            if (seed.GetComponent<Seed_Controller>().pointPower && Random.Range(0.0f, 1.0f) >= 0.2f)
+            if (seed.GetComponent<Seed_Controller>().pointPower && Random.Range(0.0f, 1.0f) >= 0.2f + (0.8 * scoreHandler.distanceTraveled / 5000.0f))
             {
                 newPrefab = Instantiate(pointPower, new Vector2(ground[groundIndex].transform.position.x + Random.Range(-12.5f, 12.5f), Mathf.Max(cameraObject.transform.position.y + Random.Range(-10.0f, 10.0f), -2.0f)), Quaternion.identity);
                 newPrefab.GetComponent<WorldObjectDestroy_Script>().cameraObject = cameraObject;
             }
-            if (seed.GetComponent<Seed_Controller>().pointPower && Random.Range(0.0f, 1.0f) >= 0.2f)
+            if (seed.GetComponent<Seed_Controller>().pointPower && Random.Range(0.0f, 1.0f) >= 0.2f + (0.8 * scoreHandler.distanceTraveled / 5000.0f))
             {
                 newPrefab = Instantiate(fuelPower, new Vector2(ground[groundIndex].transform.position.x + Random.Range(-12.5f, 12.5f), Mathf.Max(cameraObject.transform.position.y + Random.Range(-10.0f, 10.0f), -2.0f)), Quaternion.identity);
                 newPrefab.GetComponent<WorldObjectDestroy_Script>().cameraObject = cameraObject;
@@ -106,10 +111,13 @@ public class Looping_Script : MonoBehaviour
 
             do
             {
-                newPrefab = Instantiate(windPrefab, new Vector3(ground[groundIndex].transform.position.x - Random.Range(0.5f, 12.0f), Random.Range(incHeight, incHeight + 8.0f), 0.0f), Quaternion.Euler(0.0f, 0.0f, Random.Range(-15.0f, 50.0f)));
-                newPrefab.GetComponent<Wind_Script>().strength = Random.Range(4.0f, 15.0f);
-                newPrefab.GetComponent<Wind_Script>().cameraObject = cameraObject;
-                newPrefab.transform.localScale = new Vector3(Random.Range(2.0f, 10.0f), Random.Range(0.75f, 4.0f), 1.0f);
+                if (Random.Range(0.0f, 1.0f) >= 1.0f - (scoreHandler.distanceTraveled / 5000.0f))
+                {
+                    newPrefab = Instantiate(windPrefab, new Vector3(ground[groundIndex].transform.position.x - Random.Range(0.5f, 12.0f), Random.Range(incHeight, incHeight + 8.0f), 0.0f), Quaternion.Euler(0.0f, 0.0f, Random.Range(-15.0f, 50.0f)));
+                    newPrefab.GetComponent<Wind_Script>().strength = Random.Range(4.0f, 15.0f);
+                    newPrefab.GetComponent<Wind_Script>().cameraObject = cameraObject;
+                    newPrefab.transform.localScale = new Vector3(Random.Range(2.0f, 10.0f), Random.Range(0.75f, 4.0f), 1.0f);
+                }
                 incHeight += 8.0f;
             } while (incHeight <= cameraObject.transform.position.y);
         }
