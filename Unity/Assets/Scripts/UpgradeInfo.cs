@@ -12,6 +12,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public string prefKey;
     public int price = 10;
     public bool expPriceInc;
+    public GameObject[] unlockables;
     [Space(5)]
 
     [Header("Tooltip Information")]
@@ -26,6 +27,12 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         animator = GetComponent<Animator>();
         uui = FindObjectOfType<UpgradeUI>();
+
+        foreach(GameObject unlock in unlockables)
+        {
+            unlock.SetActive(false);
+        }
+
         updateInfo();
     }
 
@@ -59,6 +66,12 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 else
                 {
                     price += price;
+                }
+
+                // Unlocks new things!
+                foreach(GameObject unlock in unlockables)
+                {
+                    unlock.SetActive(true);
                 }
 
                 // Tooltip update
@@ -119,9 +132,16 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 }
             }
 
+            // If you're at max level, sets price to 0.
             if(level == maxLevel)
             {
                 price = 0;
+            }
+
+            // Enable all unlockables if you have the key.
+            foreach(GameObject unlock in unlockables)
+            {
+                unlock.SetActive(true);
             }
 
             updateAnimator();

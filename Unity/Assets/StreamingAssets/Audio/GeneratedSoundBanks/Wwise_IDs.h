@@ -21,6 +21,8 @@ namespace AK
         static const AkUniqueID MENU_CANCEL = 3180909377U;
         static const AkUniqueID MENU_CONFIRM = 4046753069U;
         static const AkUniqueID MENU_HOVER = 309439191U;
+        static const AkUniqueID MENU_RETURN = 3664790941U;
+        static const AkUniqueID MUSIC_SHOP = 3229152761U;
         static const AkUniqueID ROCKET_THRUSTERS = 550138126U;
         static const AkUniqueID SAIL_OPEN = 1817250657U;
         static const AkUniqueID SAVE_DELETE = 3850999812U;
