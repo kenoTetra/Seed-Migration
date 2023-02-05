@@ -6,6 +6,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	657901810	wind_gust_light			\Default Work Unit\wind_gust_light	
 	733168346	game_start			\Default Work Unit\game_start	
 	1310327096	shop_sell			\Default Work Unit\shop_sell	
+	1428582982	shop_max			\Default Work Unit\shop_max	
 	1495252156	shop_buy			\Default Work Unit\shop_buy	
 	1817250657	sail_open			\Default Work Unit\sail_open	
 	2086719034	acorn_detach			\Default Work Unit\acorn_detach	
@@ -19,7 +20,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	15411689	Axe 1016_69	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Axe 1016_69_54D57246.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Axe 1016_69		223824
 	42085038	Rocket_Thrusters_Start	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Rocket_Thrusters_Start_6AA7458E.wem		\Actor-Mixer Hierarchy\Default Work Unit\ROCKET THRUSTERS!!!!\Rocket_Thrusters_Start		491980
 	72869770	Shop Buy Silly	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Shop Buy Silly_2738AF5C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shop Sounds\Shop Buy Silly		594328
-	80710655	BG 1	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\BG 1_601CF773.wem		\Actor-Mixer Hierarchy\Default Work Unit\BG 1		30719332
+	80710655	BG 1	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\BG 1_601CF773.wem		\Actor-Mixer Hierarchy\Default Work Unit\Backgrounds\BG 1		30719332
 	148913618	Wind_Gust06	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust06		304224
 	149928363	Menu Cancel	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Menu Cancel_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Menu Cancel		222920
 	163184666	Wind_Gust08	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust08_F9E6C229.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust08		219132
@@ -49,8 +50,10 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	794867995	Wind_Gust10	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust10_3EA2D3B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust10		268688
 	812947597	Heavy Wind Gust 2	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Heavy Wind Gust 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Heavy Wind Gust\Heavy Wind Gust 2		917704
 	815048794	Menu Confirm A	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Menu Confirm A_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Menu Confirm A		222920
+	843919112	BG 2	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\31766__slanesh__foret-oiseau_07AD699C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Backgrounds\BG 2		1638640
 	852547647	Acorn Bounces(2)	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Acorn Bounces(4)_7AD499BA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Bounces(2)		281484
 	967463185	slipniverb	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\slipniverb_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Save Deletion\slipniverb		1474656
 	980213962	Detatch Wood 1	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Detatch Wood 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Detach\Detatch Wood 1		163068
 	1004424073	treefalleditedt	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\treefalleditedt_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Save Deletion\treefalleditedt		1156928
+	1049114673	shop max	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\shop max_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\shop max		222920
 
