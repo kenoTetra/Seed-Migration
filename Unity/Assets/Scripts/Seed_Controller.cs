@@ -41,8 +41,8 @@ public class Seed_Controller : MonoBehaviour
     // Balance Data
     public float rocketStrengthBalance = 6f;
     public float fuelEffBalance = .5f;
-    public float jermaSpeedBalance = 2f;
-    public float clampBalance = 2.5f;
+    public float jermaSpeedBalance = .5f;
+    public float clampBalance = 1.25f;
     public float turnStabBalance = .5f;
 
     // Powers
