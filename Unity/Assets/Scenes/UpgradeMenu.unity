@@ -977,7 +977,7 @@ MonoBehaviour:
   acornAnimator: {fileID: 0}
   acornAnimBool: 0
   acornAnimString: 
-  title: Floating Leaves
+  title: Is it fall yet?
   body: Unlocks a pickup that increases your sail upgrade by 1 (can go over max!)
     for a short time.
 --- !u!114 &202901093
@@ -3469,7 +3469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: price
-      value: 50
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: title
@@ -5059,7 +5059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: price
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: title
@@ -5444,13 +5444,13 @@ MonoBehaviour:
   level: 0
   maxLevel: 1
   prefKey: GenomePickups
-  price: 1000
+  price: 100
   expPriceInc: 0
   unlockables: []
   acornAnimator: {fileID: 0}
   acornAnimBool: 0
   acornAnimString: 
-  title: Scattered Genome
+  title: Pollen Nation
   body: Unlocks a pickup that gives you 100 points on pickup!
 --- !u!114 &1811025773
 MonoBehaviour:
@@ -6956,8 +6956,16 @@ PrefabInstance:
       value: Sail Upgrade
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: body
+      value: Catch the wind with this sail-like upgrade that lets you glide.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: price
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: title
+      value: Wind Dispersal
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: prefKey

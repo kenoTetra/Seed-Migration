@@ -65,7 +65,7 @@ public class Seed_Controller : MonoBehaviour
         sail = checkSetKeyInt("Sail");
         weight = checkSetKeyInt("Mass");
         rocket = checkSetKeyBool("Rocket");
-        rocketStrength = checkSetKeyInt("RocketSpeed") / 10f;
+        rocketStrength = checkSetKeyInt("RocketSpeed") / 8f;
         rocketFuel = checkSetKeyInt("Fuel");
         germination = checkSetKeyBool("Germination");
         germinationDuration = checkSetKeyInt("Sugar");
@@ -79,7 +79,7 @@ public class Seed_Controller : MonoBehaviour
         rb.mass = 2.0f * (1.0f - 0.0625f * weight);
 
         // set upgrades rocket
-        fuelTank = 3.0f + (3.0f * rocketFuel);
+        fuelTank = 3.0f + (1.0f * rocketFuel);
 
         // set upgrade visuals
         animator.SetBool("Rocket", rocket);
@@ -160,7 +160,7 @@ public class Seed_Controller : MonoBehaviour
         // rocket ui visuals
         if (rocket)
         {
-            fuelUIFill.fillAmount = fuelTank / (3.0f + (3.0f * rocketFuel));
+            fuelUIFill.fillAmount = fuelTank / (3.0f + (1.0f * rocketFuel));
         }
 
         // Jerma Nation
@@ -176,7 +176,7 @@ public class Seed_Controller : MonoBehaviour
             }
             else if (germinating == false)
             {
-                germinationTimer = 1.0f + (1.0f * germinationCooldown);
+                germinationTimer = 1.0f + (0.5f * germinationDuration);
                 germinationCDTimer = 0.0f;
             }
 
@@ -190,6 +190,7 @@ public class Seed_Controller : MonoBehaviour
                 if (germinationTimer <= 0.0f)
                 {
                     germinating = false;
+                    leafUIFill.fillAmount = 0f;
                     germinationCDTimer = 15.0f - (2.0f * germinationCooldown);
                 }
             }
