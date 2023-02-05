@@ -22,6 +22,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [Header("Tooltip Information")]
     public string title = "This is a title";
     public string body = "This is the body";
+    public bool isMaxLevel;
 
     private Animator animator;
     private UpgradeUI uui;
@@ -29,6 +30,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     // Start is called before the first frame update
     void Start()
     {
+        isMaxLevel = false;
         animator = GetComponent<Animator>();
         uui = FindObjectOfType<UpgradeUI>();
 
@@ -37,23 +39,9 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             unlock.SetActive(false);
         }
 
-        priceSaved = price;
         updateInfo();
     }
-
-    void Update()
-    {
-        if(Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.G))
-        {
-            price = 0;
-        }
-
-        else
-        {
-            price = priceSaved;
-        }
-    }
-
+    
     public void buyUpgrade()
     {
         if(uui.score >= price)
@@ -88,6 +76,8 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 {
                     price += price;
                 }
+
+                priceSaved = price;
 
                 // Unlocks new things!
                 foreach(GameObject unlock in unlockables)
@@ -156,8 +146,10 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             // If you're at max level, sets price to 0.
             if(level == maxLevel)
             {
-                price = 0;
+                isMaxLevel = true;
             }
+
+            priceSaved = price;
 
             // Enable all unlockables if you have the key.
             foreach(GameObject unlock in unlockables)
@@ -190,7 +182,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     // TOOLTIP HANDLERS \\
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        if(price > 0)
+        if(!isMaxLevel)
         {
             TooltipHandler.instance.setShowTooltip(title, body, price.ToString(), animator.GetInteger("Level"));
         }
@@ -209,7 +201,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     void resetTooltip()
     {
         TooltipHandler.instance.hideTooltip();
-        if(price > 0)
+        if(!isMaxLevel)
         {
             TooltipHandler.instance.setShowTooltip(title, body, price.ToString(), animator.GetInteger("Level"));
         }
