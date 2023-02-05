@@ -314,6 +314,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="music_game" ID="{8C5637AA-5B76-4862-9F68-ADC0A1F9FA79}">
+					<ChildrenList>
+						<Action Name="" ID="{013C92C7-200E-4404-8F16-018814F0E3D0}" ShortID="1016743034">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="gameplay_music" ID="{C5CC3C56-61EE-46D3-920D-A981360AFB68}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
