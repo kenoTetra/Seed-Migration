@@ -128,13 +128,20 @@ MonoBehaviour:
   mainWind: {fileID: 0}
   windModifier: 0.0625
   fuelTank: 0
-  sail: 0
+  germinationTimer: 0
+  germinationCDTimer: 0
+  germinating: 0
+  germinatingBounce: 0
+  sail: 1
   gravity: 0
   weight: 0
   wind: 0
   rocket: 0
   rocketStrength: 0
   rocketFuel: 0
+  germination: 0
+  germinationDuration: 0
+  germinationCooldown: 0
   hintText: {fileID: 0}
 --- !u!60 &5568644605321107805
 PolygonCollider2D:

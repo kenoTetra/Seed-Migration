@@ -11,6 +11,10 @@ public class Seed_Controller : MonoBehaviour
     public GameObject mainWind;
     public float windModifier;
     public float fuelTank;
+    public float germinationTimer;
+    public float germinationCDTimer;
+    public bool germinating;
+    public bool germinatingBounce;
 
     // Upgrades
     public int sail;
@@ -20,6 +24,9 @@ public class Seed_Controller : MonoBehaviour
     public bool rocket;
     public int rocketStrength;
     public int rocketFuel;
+    public bool germination;
+    public int germinationDuration;
+    public int germinationCooldown;
 
     // Hint Text
     public GameObject hintText;
@@ -73,7 +80,14 @@ public class Seed_Controller : MonoBehaviour
             else if (rb.angularVelocity > -100.0f && horizInput >= 0.0f)
             {
                 rb.AddTorque(-horizInput);
-            }    
+            }
+
+            germinatingBounce = false;
+        }
+        else if (germinatingBounce == false)
+        {
+            germinationCDTimer = Mathf.Min(20.0f - (2.0f * germinationCooldown), germinationCDTimer + 2.0f);
+            germinatingBounce = true;
         }
 
         // Rocket Time
@@ -81,6 +95,37 @@ public class Seed_Controller : MonoBehaviour
         {
             rb.AddForce(transform.up * (2.0f + rocketStrength * 1.0f));
             fuelTank -= Time.deltaTime;
+        }
+
+        // Jerma Nation
+        if (germination)
+        {
+            if (germinationCDTimer > 0.0f)
+            {
+                germinationCDTimer -= Time.deltaTime;
+            }
+            else if (germinationTimer > 0.0f && Input.GetButtonDown("Fire2"))
+            {
+                germinating = true;
+            }
+            else if (germinating == false)
+            {
+                germinationTimer = 1.0f + (1.0f * germinationCooldown);
+                germinationCDTimer = 0.0f;
+            }
+
+            if (germinating && germinationTimer > 0.0f)
+            {
+                germinationTimer -= Time.deltaTime;
+
+                rb.AddForce(Vector2.up * 2.0f);
+
+                if (germinationTimer <= 0.0f)
+                {
+                    germinating = false;
+                    germinationCDTimer = 15.0f - (2.0f * germinationCooldown);
+                }
+            }
         }
     }
 
