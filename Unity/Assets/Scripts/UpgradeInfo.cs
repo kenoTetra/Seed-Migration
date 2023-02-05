@@ -16,6 +16,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public Animator acornAnimator;
     public bool acornAnimBool;
     public string acornAnimString;
+    private int priceSaved;
     [Space(5)]
 
     [Header("Tooltip Information")]
@@ -36,7 +37,21 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             unlock.SetActive(false);
         }
 
+        priceSaved = price;
         updateInfo();
+    }
+
+    void Update()
+    {
+        if(Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.G))
+        {
+            price = 0;
+        }
+
+        else
+        {
+            price = priceSaved;
+        }
     }
 
     public void buyUpgrade()

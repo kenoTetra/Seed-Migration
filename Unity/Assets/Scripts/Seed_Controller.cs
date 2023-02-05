@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using AK.Wwise;
@@ -32,6 +33,17 @@ public class Seed_Controller : MonoBehaviour
     public bool germination;
     public int germinationDuration;
     public int germinationCooldown;
+    public int fuelEfficency;
+    public int jermaSpeed;
+    public int clamp;
+    public int turnStab;
+
+    // Balance Data
+    public float rocketStrengthBalance = 6f;
+    public float fuelEffBalance = .5f;
+    public float jermaSpeedBalance = 2f;
+    public float clampBalance = 2.5f;
+    public float turnStabBalance = .5f;
 
     // Powers
     public bool windPower;
@@ -55,6 +67,7 @@ public class Seed_Controller : MonoBehaviour
     // References
     private Rigidbody2D rb;
     private Animator animator;
+    private ScoreHandler sh;
 
     // Start is called before the first frame update
     void Start()
@@ -62,16 +75,23 @@ public class Seed_Controller : MonoBehaviour
         // references
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        sh = FindObjectOfType<ScoreHandler>();
 
         // get upgrades
-        sail = checkSetKeyInt("Sail") / 3f;
+        sail = checkSetKeyInt("Sail") / 2f;
         weight = checkSetKeyInt("Mass");
         rocket = checkSetKeyBool("Rocket");
-        rocketStrength = checkSetKeyInt("RocketSpeed") / 6f;
+        rocketStrength = checkSetKeyInt("RocketSpeed") / rocketStrengthBalance;
         rocketFuel = checkSetKeyInt("Fuel");
         germination = checkSetKeyBool("Germination");
         germinationDuration = checkSetKeyInt("Sugar");
         germinationCooldown = checkSetKeyInt("JermaCooldown");
+        fuelEfficency = checkSetKeyInt("FuelEfficency");
+        jermaSpeed = checkSetKeyInt("JermaSpeed");
+        clamp = checkSetKeyInt("Clamp");
+        turnStab = checkSetKeyInt("TurnStab");
+
+        // get powers
         windPower = checkSetKeyBool("AirCurrent");
         leafPower = checkSetKeyBool("Leaves");
         pointPower = checkSetKeyBool("GenomePickups");
@@ -123,6 +143,7 @@ public class Seed_Controller : MonoBehaviour
         if (grounded == false)
         {
             float horizInput = Input.GetAxis("Horizontal");
+            horizInput = horizInput * (1 + (turnStab * turnStabBalance));
 
             if (rb.angularVelocity < 100.0f && horizInput <= 0.0f)
             {
@@ -157,7 +178,7 @@ public class Seed_Controller : MonoBehaviour
         if (rocket && fuelTank > 0.0f && Input.GetButton("Fire1") && rb.simulated)
         {
             rb.AddForce(transform.up * (2.0f + rocketStrength * 1.0f));
-            fuelTank -= Time.deltaTime;
+            fuelTank -= Time.deltaTime / (1 + (fuelEfficency * fuelEffBalance));
         }
 
         // rocket ui visuals
@@ -188,7 +209,7 @@ public class Seed_Controller : MonoBehaviour
                 germinationTimer -= Time.deltaTime;
 
 
-                rb.AddForce(Vector2.up * 3.0f);
+                rb.AddForce(Vector2.up * (3.0f + (jermaSpeed * jermaSpeedBalance)));
 
                 if (germinationTimer <= 0.0f)
                 {
@@ -201,9 +222,9 @@ public class Seed_Controller : MonoBehaviour
             leafUIFill.fillAmount = ((15f - (2.0f * germinationCooldown)) - germinationCDTimer) / (15f - (2.0f * germinationCooldown));
         }
 
-        if(rb.velocity.y < -velYClamp)
+        if(rb.velocity.y < (-velYClamp + (clamp * clampBalance)))
         {
-            rb.velocity = new Vector2(rb.velocity.x, -velYClamp);
+            rb.velocity = new Vector2(rb.velocity.x, (-velYClamp + (clamp * clampBalance)));
         }
     }
 
@@ -223,7 +244,7 @@ public class Seed_Controller : MonoBehaviour
         // Collects the Point Power
         if (collision.name == "PointPower(Clone)")
         {
-            scoreHandler.GetComponent<ScoreHandler>().scoreBonus += 50;
+            sh.scoreBonus += (int)Math.Ceiling(50 * (1 + (sh.Markiplier * sh.MarkpilierEff)));
             Destroy(collision.gameObject);
         }
         // Collects the Fuel Power

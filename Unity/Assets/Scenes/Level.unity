@@ -7388,6 +7388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceTraveled: 0
+  Markiplier: 0
+  MarkpilierEff: 0.25
   scoreText: {fileID: 1824932690}
   scoreHeader: 'Score: '
   scoreBonus: 0
@@ -17199,6 +17201,10 @@ PrefabInstance:
       propertyPath: scoreHandler
       value: 
       objectReference: {fileID: 1951409096}
+    - target: {fileID: 1065946315, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
+      propertyPath: rocketStrengthBalance
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 845651198232919415, guid: 83d3f1627d72b35408b9e2b88997546e, type: 3}
       propertyPath: m_Name
       value: Seed

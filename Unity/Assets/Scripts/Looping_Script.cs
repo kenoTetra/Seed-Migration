@@ -94,7 +94,7 @@ public class Looping_Script : MonoBehaviour
                 newPrefab = Instantiate(pointPower, new Vector2(ground[groundIndex].transform.position.x + Random.Range(-12.5f, 12.5f), Mathf.Max(cameraObject.transform.position.y + Random.Range(-10.0f, 10.0f), -2.0f)), Quaternion.identity);
                 newPrefab.GetComponent<WorldObjectDestroy_Script>().cameraObject = cameraObject;
             }
-            if (seed.GetComponent<Seed_Controller>().pointPower && Random.Range(0.0f, 1.0f) >= 0.2f + (0.8 * scoreHandler.distanceTraveled / 5000.0f))
+            if (seed.GetComponent<Seed_Controller>().fuelPower && Random.Range(0.0f, 1.0f) >= 0.2f + (0.8 * scoreHandler.distanceTraveled / 5000.0f))
             {
                 newPrefab = Instantiate(fuelPower, new Vector2(ground[groundIndex].transform.position.x + Random.Range(-12.5f, 12.5f), Mathf.Max(cameraObject.transform.position.y + Random.Range(-10.0f, 10.0f), -2.0f)), Quaternion.identity);
                 newPrefab.GetComponent<WorldObjectDestroy_Script>().cameraObject = cameraObject;
