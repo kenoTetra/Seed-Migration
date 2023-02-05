@@ -12,11 +12,14 @@ Event	ID	Name			Wwise Object Path	Notes
 	2086719034	acorn_detach			\Default Work Unit\acorn_detach	
 	2283422187	wind_gust_heavy			\Default Work Unit\wind_gust_heavy	
 	3180909377	menu_cancel			\Default Work Unit\menu_cancel	
+	3229152761	music_shop			\Default Work Unit\music_shop	
+	3664790941	menu_return			\Default Work Unit\menu_return	
 	3850999812	save_delete			\Default Work Unit\save_delete	
 	4046753069	menu_confirm			\Default Work Unit\menu_confirm	
 	4145930322	acorn_bounces			\Default Work Unit\acorn_bounces	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	12958296	Game Start B	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Game Start B_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Game Start B		242624
 	15411689	Axe 1016_69	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Axe 1016_69_54D57246.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Axe 1016_69		223824
 	42085038	Rocket_Thrusters_Start	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Rocket_Thrusters_Start_6AA7458E.wem		\Actor-Mixer Hierarchy\Default Work Unit\ROCKET THRUSTERS!!!!\Rocket_Thrusters_Start		491980
 	72869770	Shop Buy Silly	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Shop Buy Silly_2738AF5C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shop Sounds\Shop Buy Silly		594328
@@ -26,6 +29,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	163184666	Wind_Gust08	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Wind_Gust08_F9E6C229.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust08		219132
 	183220830	Detatch Wood 2	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Detatch Wood 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Detach\Detatch Wood 2		97652
 	189749510	Wind_Gust07	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Wind_Gust07_B8640A34.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust07		188430
+	204446405	Shop music	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Shop music_673E9F70.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shop Sounds\Shop music		11579800
 	212557349	Acorn Bounces(3)	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Acorn Bounces(4)_0B5EBA56.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Bounces(3)		342060
 	251566777	Sail	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\188733__sauron974__cloth-flaps_D2AD6E55.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sail\Sail		227276
 	265017521	Game Start A	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Game Start A_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Game Start A		242624

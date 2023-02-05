@@ -15,6 +15,8 @@ public class Seed_Controller : MonoBehaviour
     public float germinationCDTimer;
     public bool germinating;
     public bool germinatingBounce;
+    public GameObject scoreHandler;
+    public float leafPowerTimer;
 
     // Upgrades
     public int sail;
@@ -30,6 +32,8 @@ public class Seed_Controller : MonoBehaviour
 
     // Powers
     public bool windPower;
+    public bool leafPower;
+    public bool pointPower;
 
     // Hint Text
     public GameObject hintText;
@@ -46,6 +50,18 @@ public class Seed_Controller : MonoBehaviour
         rb.mass = 2.0f * (1.0f - 0.0625f * weight);
 
         fuelTank = 5.0f + (5.0f * rocketFuel);
+
+        sail = checkSetKeyInt("Sail");
+        weight = checkSetKeyInt("Mass");
+        rocket = checkSetKeyBool("Rocket");
+        rocketStrength = checkSetKeyInt("RocketSpeed");
+        rocketFuel = checkSetKeyInt("Fuel");
+        germination = checkSetKeyBool("Germination");
+        germinationDuration = checkSetKeyInt("Sugar");
+        germinationCooldown = checkSetKeyInt("JermaCooldown");
+        windPower = checkSetKeyBool("AirCurrent");
+        leafPower = checkSetKeyBool("Leaves");
+        pointPower = checkSetKeyBool("GenomePickups");
     }
 
     // Update is called once per frame
@@ -91,6 +107,18 @@ public class Seed_Controller : MonoBehaviour
         {
             germinationCDTimer = Mathf.Min(20.0f - (2.0f * germinationCooldown), germinationCDTimer + 2.0f);
             germinatingBounce = true;
+        }
+
+        // Leaf Power effect
+        if (leafPowerTimer > 0.0f)
+        {
+            leafPowerTimer -= Time.deltaTime;
+            sailModifier = 5.0f;
+        }
+        else
+        {
+            sailModifier = 3.5f;
+            leafPowerTimer = 0.0f;
         }
 
         // Rocket Time
@@ -139,6 +167,18 @@ public class Seed_Controller : MonoBehaviour
         {
             collision.GetComponent<WindPowerScript>().Activate();
         }
+        // Collects the Leaf Power
+        if (collision.name == "LeafPower(Clone)")
+        {
+            leafPowerTimer += 5.0f;
+            Destroy(collision.gameObject);
+        }
+        // Collects the Point Power
+        if (collision.name == "PointPower(Clone)")
+        {
+            scoreHandler.GetComponent<ScoreHandler>().scoreBonus += 50;
+            Destroy(collision.gameObject);
+        }
 
         // Catches the wind
         if (collision.name == "Wind(Clone)")
@@ -161,5 +201,26 @@ public class Seed_Controller : MonoBehaviour
                 rb.AddForce(transform.up * (collision.GetComponent<MainWind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
             }
         }
+    }
+
+    int checkSetKeyInt(string key)
+    {
+        if (PlayerPrefs.HasKey(key))
+        {
+            return PlayerPrefs.GetInt(key);
+        }
+
+        return 0;
+    }
+
+    bool checkSetKeyBool(string key)
+    {
+        if (PlayerPrefs.HasKey(key))
+        {
+            Debug.Log(key);
+            return PlayerPrefs.GetInt(key) != 0;
+        }
+
+        return false;
     }
 }

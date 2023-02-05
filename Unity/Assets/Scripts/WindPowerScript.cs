@@ -25,7 +25,8 @@ public class WindPowerScript : MonoBehaviour
     public void Activate()
     {
         GameObject newWind = Instantiate(windCurrent, new Vector2(transform.position.x + 4.0f, transform.position.y + 2.0f), Quaternion.Euler(0.0f, 0.0f, 30.0f));
-        newWind.GetComponent<Wind_Script>().strength = 30.0f;
+        newWind.GetComponent<Wind_Script>().strength = 25.0f;
+        newWind.GetComponent<Wind_Script>().cameraObject = cameraObject;
         newWind.transform.localScale = new Vector2(8.0f, 12.0f);
 
         Destroy(this);

@@ -22,6 +22,8 @@ public class ScoreHandler : MonoBehaviour
     public TMP_Text scoreText;
     public string scoreHeader = "Score: ";
 
+    public int scoreBonus;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,7 @@ public class ScoreHandler : MonoBehaviour
             {
                 // Push their position moved from their startpos rounded up (.01 -> 1) to the score.
                 distanceTraveled = seed.transform.position.x - startX;
-                roundedScore = (int)Math.Ceiling(distanceTraveled);
+                roundedScore = (int)Math.Ceiling(distanceTraveled + scoreBonus);
                 scoreText.text = scoreHeader + roundedScore.ToString();
             }
         }

@@ -463,7 +463,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradePanels:
   - {fileID: 511286027}
-  - {fileID: 0}
   scoreText: {fileID: 192956150}
   scoreHeader: 'Score: '
   score: 0
@@ -497,8 +496,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 777012234}
   - {fileID: 733860591}
-  - {fileID: 1023333835}
   - {fileID: 1236982447}
   - {fileID: 565733524}
   - {fileID: 511286028}
@@ -507,8 +506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 698, y: -354.46002}
-  m_SizeDelta: {x: 507.17798, y: 710.326}
+  m_AnchoredPosition: {x: 698, y: -391.28607}
+  m_SizeDelta: {x: 507.178, y: 783.979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188376723
 MonoBehaviour:
@@ -783,7 +782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &202901091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -822,6 +821,7 @@ MonoBehaviour:
   prefKey: Leaves
   price: 1000
   expPriceInc: 0
+  unlockables: []
   title: Floating Leaves
   body: Unlocks a pickup that increases your sail upgrade by 1 (can go over max!)
     for a short time.
@@ -989,7 +989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &319968403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1004,7 +1004,7 @@ RectTransform:
   m_Children:
   - {fileID: 495265617}
   m_Father: {fileID: 511286028}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.313}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1028,6 +1028,9 @@ MonoBehaviour:
   prefKey: Germination
   price: 150
   expPriceInc: 0
+  unlockables:
+  - {fileID: 1741251969}
+  - {fileID: 773407508}
   title: Germination
   body: Propell yourself upwards with this upgrade. Sprouts a leaf from your acorn
     which allows you to fly like a helicopter for a small period of time by pressing
@@ -1185,7 +1188,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
   m_PrefabInstance: {fileID: 773407507}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 773407508}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa53090e84a33b549aa0a73a3f3df3ed, type: 3}
@@ -1416,7 +1419,7 @@ GameObject:
   - component: {fileID: 511286030}
   - component: {fileID: 511286029}
   m_Layer: 5
-  m_Name: Upgrades
+  m_Name: Buy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1437,13 +1440,13 @@ RectTransform:
   - {fileID: 614692695}
   - {fileID: 554162235}
   - {fileID: 1108396814980829472}
-  - {fileID: 1162311168}
   - {fileID: 319968403}
+  - {fileID: 1162311168}
+  - {fileID: 1878054483}
   - {fileID: 1696475808}
   - {fileID: 1243921458}
   - {fileID: 1537943800}
   - {fileID: 386306684}
-  - {fileID: 1878054483}
   - {fileID: 202901091}
   - {fileID: 1811025771}
   m_Father: {fileID: 188376722}
@@ -1451,8 +1454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -761, y: -249.179}
-  m_SizeDelta: {x: 521.368, y: 1211.143}
+  m_AnchoredPosition: {x: -761.0001, y: -212.35297}
+  m_SizeDelta: {x: 521.36786, y: 1211.143}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511286029
 MonoBehaviour:
@@ -1545,7 +1548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.5410156, y: -241.4729}
+  m_AnchoredPosition: {x: 3.5408936, y: -43.17389}
   m_SizeDelta: {x: 480, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565733525
@@ -1654,141 +1657,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &588121263
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 588121264}
-  - component: {fileID: 588121266}
-  - component: {fileID: 588121265}
-  m_Layer: 5
-  m_Name: Text (TMP) (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &588121264
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588121263}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1023333835}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &588121265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588121263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Sell
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6e4ef2d3b04aa6040add567077ae6443, type: 2}
-  m_sharedMaterial: {fileID: 7754107567864415034, guid: 6e4ef2d3b04aa6040add567077ae6443, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4283279730
-  m_fontColor: {r: 0.4474057, g: 0.6627451, b: 0.3019608, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &588121266
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588121263}
-  m_CullTransparentMesh: 1
 --- !u!1 &588775236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,7 +1894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2104,6 +1972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket Speed Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: body
       value: Fly faster with improved boosters that take you higher and faster!
@@ -2126,6 +1998,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+--- !u!1 &614993560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+  m_PrefabInstance: {fileID: 614993559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &666619512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,21 +2167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72349c636042f74bb9ebc03865f8260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sailUpgrade: {fileID: 0}
-  sailLevel: 0
-  rocketUpgrade: {fileID: 0}
-  massUpgrade: {fileID: 0}
-  massLevel: 0
-  germUpgrade: {fileID: 0}
-  fuelUpgrade: {fileID: 0}
-  fuelLevel: 0
-  throttleUpgrade: {fileID: 0}
-  throttleLevel: 0
-  photoUpgrade: {fileID: 0}
-  photoLevel: 0
-  sugarUpgrade: {fileID: 0}
-  sugarLevel: 0
-  curScore: 0
 --- !u!4 &677803555
 Transform:
   m_ObjectHideFlags: 0
@@ -2327,6 +2189,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1070628715933631077, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
+      propertyPath: data.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: bf8b3e727a365274ba10ef84912c3144, type: 2}
     - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2486,11 +2352,11 @@ RectTransform:
   m_Children:
   - {fileID: 1785440318}
   m_Father: {fileID: 188376722}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.5410156, y: 241.34622}
+  m_AnchoredPosition: {x: 3.5408936, y: 278.1723}
   m_SizeDelta: {x: 480, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &733860592
@@ -2740,7 +2606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2818,6 +2684,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sugar Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: body
       value: Build up sugars for a longer period of time in the air. Germinating
@@ -2837,6 +2707,147 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+--- !u!1 &773407508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+  m_PrefabInstance: {fileID: 773407507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &777012233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777012234}
+  - component: {fileID: 777012236}
+  - component: {fileID: 777012235}
+  m_Layer: 5
+  m_Name: HintHeader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &777012234
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777012233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1890465655}
+  m_Father: {fileID: 188376722}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.7707, y: -239.281}
+  m_SizeDelta: {x: 481.54, y: 209.438}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &777012235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777012233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Hint:'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 6e4ef2d3b04aa6040add567077ae6443, type: 2}
+  m_sharedMaterial: {fileID: 7754107567864415034, guid: 6e4ef2d3b04aa6040add567077ae6443, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 72
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 348.5292, w: 144.75674}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &777012236
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777012233}
+  m_CullTransparentMesh: 1
 --- !u!1 &822948451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3124,152 +3135,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931243619}
   m_CullTransparentMesh: 1
---- !u!1 &1023333834
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1023333835}
-  - component: {fileID: 1023333837}
-  - component: {fileID: 1023333836}
-  - component: {fileID: 1023333838}
-  m_Layer: 5
-  m_Name: Powers Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1023333835
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023333834}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 588121264}
-  m_Father: {fileID: 188376722}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.5410156, y: 81.34622}
-  m_SizeDelta: {x: 480, y: 150}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1023333836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023333834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.3433962, g: 0.56500006, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5693424832d8a644ba41fa700f1bf539, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1023333837
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023333834}
-  m_CullTransparentMesh: 1
---- !u!114 &1023333838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023333834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
-    m_PressedColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
-    m_SelectedColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1023333836}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 115031176}
-        m_TargetAssemblyTypeName: UpgradeUI, Assembly-CSharp
-        m_MethodName: openMenu
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 521879256}
-        m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-        m_MethodName: onClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1033583738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3335,7 +3200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3413,6 +3278,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fuel Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: body
       value: Increase your fuel for your boosters to fly further than ever before!
@@ -3435,6 +3304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+--- !u!1 &1033583739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+  m_PrefabInstance: {fileID: 1033583738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1072075075
 GameObject:
   m_ObjectHideFlags: 0
@@ -3658,7 +3532,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
   m_PrefabInstance: {fileID: 1509880065}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1509880066}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa53090e84a33b549aa0a73a3f3df3ed, type: 3}
@@ -3813,7 +3687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.5410156, y: -81.4729}
+  m_AnchoredPosition: {x: 3.5408936, y: 116.82608}
   m_SizeDelta: {x: 480, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236982448
@@ -3932,7 +3806,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
   m_PrefabInstance: {fileID: 614993559}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 614993560}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa53090e84a33b549aa0a73a3f3df3ed, type: 3}
@@ -4290,7 +4164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4368,6 +4242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mass Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: body
       value: Let the wind carry you further. Decreases your seed's mass.
@@ -4390,6 +4268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+--- !u!1 &1509880066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+  m_PrefabInstance: {fileID: 1509880065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1537943800 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
@@ -4400,7 +4283,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
   m_PrefabInstance: {fileID: 1741251968}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1741251969}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa53090e84a33b549aa0a73a3f3df3ed, type: 3}
@@ -4683,7 +4566,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
   m_PrefabInstance: {fileID: 1033583738}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1033583739}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa53090e84a33b549aa0a73a3f3df3ed, type: 3}
@@ -4830,7 +4713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4908,6 +4791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jerma Cooldown Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: body
       value: Recover quicker after germinating, making the cooldown last less.
@@ -4926,6 +4813,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+--- !u!1 &1741251969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1108396814703550317, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+  m_PrefabInstance: {fileID: 1741251968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1780553379
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,8 +5186,9 @@ MonoBehaviour:
   level: 0
   maxLevel: 1
   prefKey: GenomePickups
-  price: 150
+  price: 1000
   expPriceInc: 0
+  unlockables: []
   title: Scattered Genome
   body: Unlocks a pickup that gives you 100 points on pickup!
 --- !u!114 &1811025773
@@ -5667,7 +5560,7 @@ RectTransform:
   m_Children:
   - {fileID: 588775237}
   m_Father: {fileID: 511286028}
-  m_RootOrder: 9
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.313}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -5691,6 +5584,7 @@ MonoBehaviour:
   prefKey: AirCurrent
   price: 1000
   expPriceInc: 0
+  unlockables: []
   title: P for Perfect!
   body: Unlocks a pickup that makes an air current on your location that's in the
     perfect conditions!
@@ -5836,6 +5730,164 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878054482}
+  m_CullTransparentMesh: 1
+--- !u!1 &1890465654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1890465655}
+  - component: {fileID: 1890465658}
+  - component: {fileID: 1890465657}
+  - component: {fileID: 1890465656}
+  m_Layer: 5
+  m_Name: HintText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1890465655
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890465654}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 777012234}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.00013709068, y: -68}
+  m_SizeDelta: {x: 481.54, y: 209.438}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1890465656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890465654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9edf872f241c849962bd44bfbe2ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hints:
+  - You can move the acorn using either A and D or <- and ->!
+  - You're doing great!
+  - There are a lot of hidden text easter eggs. Some might even give you cheat codes!
+  - Try spinning!
+--- !u!114 &1890465657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890465654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: texta go here but in all lowercase so nobody knows that you're really overflowing
+    the text box. hey, did you know that you're super cool? thanks for reading all
+    of this text. i'm usually really alone here, and nobody wants to read all of
+    the text that i type and it makes me kind of sad. but now that you're here, you're
+    reading it, and it makes me so happy I could really just keep getting smaller
+    and nobody would hear me again! hahaha wait, what the fuck
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 6e4ef2d3b04aa6040add567077ae6443, type: 2}
+  m_sharedMaterial: {fileID: 7754107567864415034, guid: 6e4ef2d3b04aa6040add567077ae6443, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 22.2
+  m_fontSizeBase: 72
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 7.723892, y: 0, z: 3.4105835, w: 32.666958}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1890465658
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890465654}
   m_CullTransparentMesh: 1
 --- !u!1 &1920125914
 GameObject:
@@ -6376,7 +6428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &1108396814980829477
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6642,6 +6694,30 @@ PrefabInstance:
       propertyPath: prefKey
       value: Sail
       objectReference: {fileID: 0}
+    - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: unlockables.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: unlockables.Array.data[0]
+      value: 
+      objectReference: {fileID: 1108396814980829473}
+    - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: unlockables.Array.data[1]
+      value: 
+      objectReference: {fileID: 1509880066}
+    - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: unlockables.Array.data[2]
+      value: 
+      objectReference: {fileID: 319968402}
+    - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: unlockables.Array.data[3]
+      value: 
+      objectReference: {fileID: 202901090}
+    - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: unlockables.Array.data[4]
+      value: 
+      objectReference: {fileID: 202901090}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
 --- !u!114 &1108396815257143128 stripped
@@ -6701,6 +6777,9 @@ MonoBehaviour:
   prefKey: Rocket
   price: 150
   expPriceInc: 0
+  unlockables:
+  - {fileID: 1033583739}
+  - {fileID: 614993560}
   title: Rocket Booster
   body: Show off your technological might with this upgrade! Straps a rocket booster
     to your acorn which can be activated by pressing 1.

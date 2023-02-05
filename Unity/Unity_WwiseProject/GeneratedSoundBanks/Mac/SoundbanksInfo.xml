@@ -22,10 +22,14 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F34FB7C9-61A6-E28D-8432-B841C58DAB7D}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{34CD6E87-AF35-7746-2154-115C304F25CC}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="12958296" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Game Start B.wav</ShortName>
+					<CachePath>SFX/Game Start B_10C4C929.wem</CachePath>
+				</File>
 				<File Id="15411689" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Axe 1016_69.wav</ShortName>
 					<CachePath>SFX/Axe 1016_69_54D57246.wem</CachePath>
@@ -61,6 +65,10 @@
 				<File Id="189749510" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wind_Gust07.wav</ShortName>
 					<CachePath>SFX/Wind_Gust07_B8640A34.wem</CachePath>
+				</File>
+				<File Id="204446405" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shop music.wav</ShortName>
+					<CachePath>SFX/Shop music_673E9F70.wem</CachePath>
 				</File>
 				<File Id="212557349" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Acorn Bounces(4).wav</ShortName>
@@ -233,6 +241,17 @@
 						<MediaRef Id="692209920"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3664790941" Name="menu_return" DurationType="OneShot" DurationMin="1.4152628" DurationMax="1.4152628">
+					<MediaRefs>
+						<MediaRef Id="12958296"/>
+						<MediaRef Id="15411689"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3229152761" Name="music_shop" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="204446405"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="550138126" Name="rocket_thrusters" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="42085038"/>
@@ -290,5 +309,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AD73CB2E-D03A-2DA1-45C0-C40F578A52F0}</FileHash>
+	<FileHash>{5AFDB99D-F854-E8A6-F306-D7EFFDEC6DB7}</FileHash>
 </SoundBanksInfo>
