@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using AK.Wwise;
 
 public class Seed_Controller : MonoBehaviour
@@ -39,6 +40,12 @@ public class Seed_Controller : MonoBehaviour
     // Hint Text
     public GameObject hintText;
 
+    // UI elements
+    public GameObject fuelUI;
+    public GameObject leafUI;
+    public Image fuelUIFill;
+    public Image leafUIFill;
+
     // Sound trigger bools
     private bool soundWind,soundBounce,soundRocket,soundGerminate;
     private bool inWind;
@@ -50,14 +57,11 @@ public class Seed_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // references
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        rb.gravityScale = 0.5f * (1.0f - 0.125f * gravity);
-        rb.mass = 2.0f * (1.0f - 0.0625f * weight);
-
-        fuelTank = 5.0f + (5.0f * rocketFuel);
-
+        // get upgrades
         sail = checkSetKeyInt("Sail");
         weight = checkSetKeyInt("Mass");
         rocket = checkSetKeyBool("Rocket");
@@ -70,8 +74,20 @@ public class Seed_Controller : MonoBehaviour
         leafPower = checkSetKeyBool("Leaves");
         pointPower = checkSetKeyBool("GenomePickups");
 
+        // set upgrades rigidbody
+        rb.gravityScale = 0.5f * (1.0f - 0.125f * gravity);
+        rb.mass = 2.0f * (1.0f - 0.0625f * weight);
+
+        // set upgrades rocket
+        fuelTank = 3.0f + (3.0f * rocketFuel);
+
+        // set upgrade visuals
         animator.SetBool("Rocket", rocket);
         animator.SetBool("Leaf", germination);
+
+        // set upgrade UI visuals
+        fuelUI.SetActive(rocket);
+        leafUI.SetActive(germination);
     }
 
     // Update is called once per frame
@@ -141,6 +157,12 @@ public class Seed_Controller : MonoBehaviour
             fuelTank -= Time.deltaTime;
         }
 
+        // rocket ui visuals
+        if (rocket)
+        {
+            fuelUIFill.fillAmount = fuelTank / (3.0f + (3.0f * rocketFuel));
+        }
+
         // Jerma Nation
         if (germination)
         {
@@ -162,6 +184,7 @@ public class Seed_Controller : MonoBehaviour
             {
                 germinationTimer -= Time.deltaTime;
 
+
                 rb.AddForce(Vector2.up * 2.0f);
 
                 if (germinationTimer <= 0.0f)
@@ -170,6 +193,8 @@ public class Seed_Controller : MonoBehaviour
                     germinationCDTimer = 15.0f - (2.0f * germinationCooldown);
                 }
             }
+
+            leafUIFill.fillAmount = ((15f - (2.0f * germinationCooldown)) - germinationCDTimer) / (15f - (2.0f * germinationCooldown));
         }
     }
 
