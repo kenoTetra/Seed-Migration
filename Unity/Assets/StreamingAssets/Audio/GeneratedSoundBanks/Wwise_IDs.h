@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID SAIL_OPEN = 1817250657U;
         static const AkUniqueID SAVE_DELETE = 3850999812U;
         static const AkUniqueID SHOP_BUY = 1495252156U;
+        static const AkUniqueID SHOP_MAX = 1428582982U;
         static const AkUniqueID SHOP_SELL = 1310327096U;
         static const AkUniqueID WIND_GUST_HEAVY = 2283422187U;
         static const AkUniqueID WIND_GUST_LIGHT = 657901810U;

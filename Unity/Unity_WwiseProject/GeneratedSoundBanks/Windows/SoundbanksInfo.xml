@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{C60EA533-E2EC-320F-77CA-FB9DE6F62FC7}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F34FB7C9-61A6-E28D-8432-B841C58DAB7D}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -158,6 +158,10 @@
 					<ShortName>Menu Confirm A.wav</ShortName>
 					<CachePath>SFX/Menu Confirm A_10C4C929.wem</CachePath>
 				</File>
+				<File Id="843919112" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>31766__slanesh__foret-oiseau.wav</ShortName>
+					<CachePath>SFX/31766__slanesh__foret-oiseau_07AD699C.wem</CachePath>
+				</File>
 				<File Id="852547647" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Acorn Bounces(4).wav</ShortName>
 					<CachePath>SFX/Acorn Bounces(4)_7AD499BA.wem</CachePath>
@@ -173,6 +177,10 @@
 				<File Id="1004424073" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>treefalleditedt.wav</ShortName>
 					<CachePath>SFX/treefalleditedt_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1049114673" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>shop max.wav</ShortName>
+					<CachePath>SFX/shop max_10C4C929.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -196,6 +204,7 @@
 				<Event Id="85412153" Name="ambience" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="80710655"/>
+						<MediaRef Id="843919112"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="175705637" Name="clock_ticking" DurationType="OneShot" DurationMin="3.430012" DurationMax="3.430012">
@@ -250,6 +259,11 @@
 						<MediaRef Id="562261301"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1428582982" Name="shop_max" DurationType="OneShot" DurationMin="1.2631747" DurationMax="1.2631747">
+					<MediaRefs>
+						<MediaRef Id="1049114673"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1310327096" Name="shop_sell" DurationType="OneShot" DurationMin="1.2631667" DurationMax="1.2631667">
 					<MediaRefs>
 						<MediaRef Id="369119737"/>
@@ -276,5 +290,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AF3D9BC8-E12D-9570-AC89-B06BEAA59058}</FileHash>
+	<FileHash>{30165FC0-D814-5913-1E56-331E915783FA}</FileHash>
 </SoundBanksInfo>

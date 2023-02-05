@@ -42,4 +42,11 @@ public class UpgradeUI : MonoBehaviour
     {
         scoreText.text = scoreHeader + score.ToString();
     }
+
+    public void useScore(int amount)
+    {
+        score += amount;
+        updateScoreText();
+        PlayerPrefs.SetInt("Score", score);
+    }
 }

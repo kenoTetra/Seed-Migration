@@ -11,6 +11,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public int maxLevel = 4;
     public string prefKey;
     public int price = 10;
+    public bool expPriceInc;
     [Space(5)]
 
     [Header("Tooltip Information")]
@@ -18,35 +19,72 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public string body = "This is the body";
 
     private Animator animator;
+    private UpgradeUI uui;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        uui = FindObjectOfType<UpgradeUI>();
         updateInfo();
     }
 
     public void buyUpgrade()
     {
-        if(level <= maxLevel)
+        if(uui.score >= price)
         {
-            // Sound!
-            Debug.Log("i bought dick for three ninty nine");
-            AkSoundEngine.PostEvent("shop_buy", gameObject);
+            if(level < maxLevel)
+            {
+                // Sound!
+                Debug.Log("i bought dick for three ninty nine");
+                AkSoundEngine.PostEvent("shop_buy", gameObject);
 
-            // Info update
-            level++;
-            PlayerPrefs.SetInt(prefKey, level);
+                // Info update
+                level++;
+                PlayerPrefs.SetInt(prefKey, level);
 
-            // Animator update
-            updateAnimator();
+                // Animator update
+                updateAnimator();
+            
+                // Take the man's money
+                uui.useScore(-price);
+
+                // Price increase
+
+                if(expPriceInc)
+                {
+                    price = price * price;
+                }
+
+                else
+                {
+                    price += price;
+                }
+
+                // Tooltip update
+                resetTooltip();
+            }
+
+            // edgecase bug fix
+            else if(level > maxLevel)
+            {
+                level = maxLevel;
+                updateAnimator();
+            }
+
+            else
+            {
+                Debug.Log("you're ALREADY rich dude, fuck off!!!");
+                AkSoundEngine.PostEvent("shop_max", gameObject);
+            }  
         }
 
         else
         {
-            Debug.Log("you're ALREADY rich dude, fuck off!!!");
-            AkSoundEngine.PostEvent("shop_max", gameObject);
+            Debug.Log("YOU''RE FUCKING POOR");
+            AkSoundEngine.PostEvent("menu_cancel", gameObject);
         }
+
     }
 
     public void sellUpgrade()
@@ -61,6 +99,31 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         if(PlayerPrefs.HasKey(prefKey))
         {
             level = PlayerPrefs.GetInt(prefKey);
+
+            if(level > maxLevel)
+            {
+                level = maxLevel;
+            }
+
+            // Increase cost based on level, loops.
+            for(int i = 0; i < level; i++)
+            {
+                if(expPriceInc)
+                {
+                    price = price * price;
+                }
+
+                else
+                {
+                    price += price;
+                }
+            }
+
+            if(level == maxLevel)
+            {
+                price = 0;
+            }
+
             updateAnimator();
         }
     }
@@ -73,11 +136,33 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     // TOOLTIP HANDLERS \\
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        TooltipHandler.instance.setShowTooltip(title, body, price, animator.GetInteger("Level"));
+        if(price > 0)
+        {
+            TooltipHandler.instance.setShowTooltip(title, body, price.ToString(), animator.GetInteger("Level"));
+        }
+
+        else
+        {
+            TooltipHandler.instance.setShowTooltip(title, body, "MAX!", animator.GetInteger("Level"));
+        }
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
         TooltipHandler.instance.hideTooltip();
+    }
+
+    void resetTooltip()
+    {
+        TooltipHandler.instance.hideTooltip();
+        if(price > 0)
+        {
+            TooltipHandler.instance.setShowTooltip(title, body, price.ToString(), animator.GetInteger("Level"));
+        }
+        
+        else
+        {
+            TooltipHandler.instance.setShowTooltip(title, body, "MAX!", animator.GetInteger("Level"));
+        }
     }
 }

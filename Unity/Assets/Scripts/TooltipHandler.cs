@@ -37,12 +37,22 @@ public class TooltipHandler : MonoBehaviour
         transform.position = Input.mousePosition;
     }
 
-    public void setShowTooltip(string titleString, string bodyString, int price, int found_level)
+    public void setShowTooltip(string titleString, string bodyString, string price, int found_level)
     {
         gameObject.SetActive(true);
         title.text = titleString;
         body.text = bodyString;
-        cost.text = price.ToString() + symbol;
+
+        if(price != "MAX!")
+        {
+            cost.text = price + symbol;
+        }
+
+        else
+        {
+            cost.text = price;
+        }
+        
         level.text = levelText + found_level.ToString();
     }
 
