@@ -50,6 +50,18 @@ public class Seed_Controller : MonoBehaviour
         rb.mass = 2.0f * (1.0f - 0.0625f * weight);
 
         fuelTank = 5.0f + (5.0f * rocketFuel);
+
+        sail = checkSetKeyInt("Sail");
+        weight = checkSetKeyInt("Mass");
+        rocket = checkSetKeyBool("Rocket");
+        rocketStrength = checkSetKeyInt("RocketSpeed");
+        rocketFuel = checkSetKeyInt("Fuel");
+        germination = checkSetKeyBool("Germination");
+        germinationDuration = checkSetKeyInt("Sugar");
+        germinationCooldown = checkSetKeyInt("JermaCooldown");
+        windPower = checkSetKeyBool("AirCurrent");
+        leafPower = checkSetKeyBool("Leaves");
+        pointPower = checkSetKeyBool("GenomePickups");
     }
 
     // Update is called once per frame
@@ -189,5 +201,26 @@ public class Seed_Controller : MonoBehaviour
                 rb.AddForce(transform.up * (collision.GetComponent<MainWind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
             }
         }
+    }
+
+    int checkSetKeyInt(string key)
+    {
+        if (PlayerPrefs.HasKey(key))
+        {
+            return PlayerPrefs.GetInt(key);
+        }
+
+        return 0;
+    }
+
+    bool checkSetKeyBool(string key)
+    {
+        if (PlayerPrefs.HasKey(key))
+        {
+            Debug.Log(key);
+            return PlayerPrefs.GetInt(key) != 0;
+        }
+
+        return false;
     }
 }
