@@ -19,9 +19,10 @@ public class Seed_Controller : MonoBehaviour
     public bool germinatingBounce;
     public GameObject scoreHandler;
     public float leafPowerTimer;
+    public float velYClamp = 35f;
 
     // Upgrades
-    public int sail;
+    public float sail;
     public int gravity;
     public int weight;
     public int wind;
@@ -36,6 +37,7 @@ public class Seed_Controller : MonoBehaviour
     public bool windPower;
     public bool leafPower;
     public bool pointPower;
+    public bool fuelPower;
 
     // Hint Text
     public GameObject hintText;
@@ -62,10 +64,10 @@ public class Seed_Controller : MonoBehaviour
         animator = GetComponent<Animator>();
 
         // get upgrades
-        sail = checkSetKeyInt("Sail");
+        sail = checkSetKeyInt("Sail") / 3f;
         weight = checkSetKeyInt("Mass");
         rocket = checkSetKeyBool("Rocket");
-        rocketStrength = checkSetKeyInt("RocketSpeed") / 8f;
+        rocketStrength = checkSetKeyInt("RocketSpeed") / 6f;
         rocketFuel = checkSetKeyInt("Fuel");
         germination = checkSetKeyBool("Germination");
         germinationDuration = checkSetKeyInt("Sugar");
@@ -73,6 +75,7 @@ public class Seed_Controller : MonoBehaviour
         windPower = checkSetKeyBool("AirCurrent");
         leafPower = checkSetKeyBool("Leaves");
         pointPower = checkSetKeyBool("GenomePickups");
+        fuelPower = checkSetKeyBool("FuelPower");
 
         // set upgrades rigidbody
         rb.gravityScale = 0.5f * (1.0f - 0.125f * gravity);
@@ -151,7 +154,7 @@ public class Seed_Controller : MonoBehaviour
         }
 
         // Rocket Time
-        if (rocket && fuelTank > 0.0f && Input.GetButton("Fire1"))
+        if (rocket && fuelTank > 0.0f && Input.GetButton("Fire1") && rb.simulated)
         {
             rb.AddForce(transform.up * (2.0f + rocketStrength * 1.0f));
             fuelTank -= Time.deltaTime;
@@ -170,7 +173,7 @@ public class Seed_Controller : MonoBehaviour
             {
                 germinationCDTimer -= Time.deltaTime;
             }
-            else if (germinationTimer > 0.0f && Input.GetButtonDown("Fire2"))
+            else if (germinationTimer > 0.0f && Input.GetButtonDown("Fire2") && rb.simulated)
             {
                 germinating = true;
             }
@@ -185,7 +188,7 @@ public class Seed_Controller : MonoBehaviour
                 germinationTimer -= Time.deltaTime;
 
 
-                rb.AddForce(Vector2.up * 2.0f);
+                rb.AddForce(Vector2.up * 3.0f);
 
                 if (germinationTimer <= 0.0f)
                 {
@@ -196,6 +199,11 @@ public class Seed_Controller : MonoBehaviour
             }
 
             leafUIFill.fillAmount = ((15f - (2.0f * germinationCooldown)) - germinationCDTimer) / (15f - (2.0f * germinationCooldown));
+        }
+
+        if(rb.velocity.y < -velYClamp)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -velYClamp);
         }
     }
 
@@ -216,6 +224,12 @@ public class Seed_Controller : MonoBehaviour
         if (collision.name == "PointPower(Clone)")
         {
             scoreHandler.GetComponent<ScoreHandler>().scoreBonus += 50;
+            Destroy(collision.gameObject);
+        }
+        // Collects the Fuel Power
+        if (collision.name == "FuelPower(Clone)")
+        {
+            fuelTank += .5f;
             Destroy(collision.gameObject);
         }
 
@@ -298,7 +312,7 @@ public class Seed_Controller : MonoBehaviour
         }
 
         // Rocket sound
-        if(rocket && fuelTank > 0f && Input.GetButton("Fire1") && !soundRocket)
+        if(rocket && fuelTank > 0f && Input.GetButton("Fire1") && !soundRocket && rb.simulated)
         {
             AkSoundEngine.StopAll(gameObject);
             AkSoundEngine.PostEvent("rocket_thrusters", gameObject);
@@ -321,7 +335,7 @@ public class Seed_Controller : MonoBehaviour
         }
 
         // Propeller sound
-        if(germinationTimer > 0.0f && Input.GetButtonDown("Fire2") && !soundGerminate)
+        if(germinationTimer > 0.0f && Input.GetButtonDown("Fire2") && !soundGerminate && rb.simulated)
         {
             AkSoundEngine.StopAll(gameObject);
             AkSoundEngine.PostEvent("sail_open", gameObject);

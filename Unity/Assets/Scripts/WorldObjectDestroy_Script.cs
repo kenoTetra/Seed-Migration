@@ -15,7 +15,7 @@ public class WorldObjectDestroy_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x + 25.0f <= cameraObject.transform.position.x || transform.position.y + 25f <= cameraObject.transform.position.y)
+        if (transform.position.x + 33.0f <= cameraObject.transform.position.x || transform.position.y + 33f <= cameraObject.transform.position.y)
         {
             Destroy(this.gameObject);
         }

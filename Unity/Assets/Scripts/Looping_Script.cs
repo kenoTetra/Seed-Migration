@@ -15,6 +15,7 @@ public class Looping_Script : MonoBehaviour
     public GameObject windPower;
     public GameObject leafPower;
     public GameObject pointPower;
+    public GameObject fuelPower;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +87,11 @@ public class Looping_Script : MonoBehaviour
             if (seed.GetComponent<Seed_Controller>().pointPower && Random.Range(0.0f, 1.0f) >= 0.2f)
             {
                 newPrefab = Instantiate(pointPower, new Vector2(ground[groundIndex].transform.position.x + Random.Range(-12.5f, 12.5f), Mathf.Max(cameraObject.transform.position.y + Random.Range(-10.0f, 10.0f), -2.0f)), Quaternion.identity);
+                newPrefab.GetComponent<WorldObjectDestroy_Script>().cameraObject = cameraObject;
+            }
+            if (seed.GetComponent<Seed_Controller>().pointPower && Random.Range(0.0f, 1.0f) >= 0.2f)
+            {
+                newPrefab = Instantiate(fuelPower, new Vector2(ground[groundIndex].transform.position.x + Random.Range(-12.5f, 12.5f), Mathf.Max(cameraObject.transform.position.y + Random.Range(-10.0f, 10.0f), -2.0f)), Quaternion.identity);
                 newPrefab.GetComponent<WorldObjectDestroy_Script>().cameraObject = cameraObject;
             }
         }

@@ -23,7 +23,7 @@ public class Wind_Script : MonoBehaviour
         particleSpeed.startLifetimeMultiplier = 6 / strength;
         particleEmission.rateOverTimeMultiplier = strength / 2;
 
-        if (transform.position.x + 25.0f <= cameraObject.transform.position.x || transform.position.y + 25f <= cameraObject.transform.position.y)
+        if (transform.position.x + 33.0f <= cameraObject.transform.position.x || transform.position.y + 33f <= cameraObject.transform.position.y)
         {
             Destroy(this.gameObject);
         }
