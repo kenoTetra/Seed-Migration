@@ -158,6 +158,17 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{AF8E1D7D-8404-46D1-B86C-24212C0F0E7E}" ShortID="144880979">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="0.25"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shop music" ID="{359ABB07-0B26-4F9E-B7BF-877223352A90}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="rocket_thrusters" ID="{D36D24B3-6354-484D-8FFA-537C0D8FEF70}">
@@ -260,6 +271,9 @@
 				<Event Name="menu_return" ID="{C915D6B5-F368-4441-A100-8013CA67D24B}">
 					<ChildrenList>
 						<Action Name="" ID="{589B77D8-43A0-4265-B5CA-E698D76C9C05}" ShortID="927713358">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Axe 1016_69" ID="{795A647D-1935-40AE-9874-9B38F208BEBC}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>

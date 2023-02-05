@@ -9,6 +9,7 @@
 						<ObjectRef Name="acorn_detach" ID="{5780BD4B-159D-41D0-B598-B979B11448C9}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="game_start" ID="{9C2E7E12-C1EC-42B8-9246-C11B5D8B7BCE}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="shop_max" ID="{0602AEB3-6DDF-4340-AED6-18042A81068F}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="menu_return" ID="{C915D6B5-F368-4441-A100-8013CA67D24B}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menu_confirm" ID="{1F54384D-4AC4-44CB-B7EF-309200B29B94}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="shop_buy" ID="{B3D3D402-BF36-461E-BD67-7DE0EF973179}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="sail_open" ID="{F87A498B-EBC7-4819-A366-3C110166A446}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
@@ -20,6 +21,7 @@
 						<ObjectRef Name="acorn_bounces" ID="{3557AD0D-9B7C-4CAD-BDB7-E75FB4DB3325}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="clock_ticking" ID="{53341C80-2998-4CC5-8A6F-9E8AEB54CBF8}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="save_delete" ID="{8652F8B7-D45F-4D60-A0CC-0CA6DB19C687}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="music_shop" ID="{551720C3-32BF-4F30-B708-6DDE90245FC7}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menu_cancel" ID="{F19A967B-C2CE-4F51-A93D-7E62DE8A3A2A}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
