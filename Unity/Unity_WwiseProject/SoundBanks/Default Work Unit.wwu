@@ -18,6 +18,7 @@
 						<ObjectRef Name="wind_gust_heavy" ID="{B5ED2474-6D8F-4A2C-804F-78F606E84F0B}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="acorn_bounces" ID="{3557AD0D-9B7C-4CAD-BDB7-E75FB4DB3325}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="clock_ticking" ID="{53341C80-2998-4CC5-8A6F-9E8AEB54CBF8}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="save_delete" ID="{8652F8B7-D45F-4D60-A0CC-0CA6DB19C687}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menu_cancel" ID="{F19A967B-C2CE-4F51-A93D-7E62DE8A3A2A}" WorkUnitID="{26474525-A675-4DB1-81A2-60751829C4EB}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

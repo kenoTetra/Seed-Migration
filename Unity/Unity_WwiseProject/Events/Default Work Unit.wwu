@@ -138,7 +138,7 @@
 						<Action Name="" ID="{9FDFD18B-C693-4B30-AE10-148A8799A596}" ShortID="460221612">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
-								<Property Name="FadeTime" Type="Real64" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -197,6 +197,27 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Sail" ID="{DA7F7807-1EF9-4BD1-8334-E10B5A2855F0}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="save_delete" ID="{8652F8B7-D45F-4D60-A0CC-0CA6DB19C687}">
+					<ChildrenList>
+						<Action Name="" ID="{84CF8848-1D8C-4CDB-B53A-6CA3F59CEEC9}" ShortID="460689776">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="treefalleditedt" ID="{FC8ED639-351A-4984-9561-4F9DCD6ADCB9}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{639E8134-841F-4CFC-B1F2-ABA5EA67F072}" ShortID="462180131">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="slipniverb" ID="{C93E5437-EF3E-4294-B8C9-0198C7B69DF5}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -1268,6 +1268,78 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
+				<Folder Name="Save Deletion" ID="{CDC5152B-3F03-44D7-ACAA-5355DB41303D}" ShortID="80002011">
+					<ChildrenList>
+						<Sound Name="treefalleditedt" ID="{FC8ED639-351A-4984-9561-4F9DCD6ADCB9}" ShortID="202849689">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>500</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C00F25C1-59E0-46ED-8E09-F2C8E2A66CD9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4A22707A-6017-4F89-9153-A4A6C24DE925}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="treefalleditedt" ID="{9C7F6F48-C6AA-4DD0-9304-06A4D53A0439}">
+									<Language>SFX</Language>
+									<AudioFile>treefalleditedt.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1004424073"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="treefalleditedt" ID="{9C7F6F48-C6AA-4DD0-9304-06A4D53A0439}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="slipniverb" ID="{C93E5437-EF3E-4294-B8C9-0198C7B69DF5}" ShortID="463186103">
+							<PropertyList>
+								<Property Name="OutputBusHighpass" Type="int16">
+									<ValueList>
+										<Value>25</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C00F25C1-59E0-46ED-8E09-F2C8E2A66CD9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4A22707A-6017-4F89-9153-A4A6C24DE925}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="slipniverb" ID="{F4F346FA-ADFD-4E01-8FC2-494B1ADD304D}">
+									<Language>SFX</Language>
+									<AudioFile>slipniverb.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="967463185"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="slipniverb" ID="{F4F346FA-ADFD-4E01-8FC2-494B1ADD304D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
