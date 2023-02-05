@@ -6049,8 +6049,13 @@ MonoBehaviour:
   hints:
   - You can move the acorn using either A and D or <- and ->!
   - You're doing great!
-  - There are a lot of hidden text easter eggs. Some might even give you cheat codes!
   - Try spinning!
+  - The germination upgrade will always move you upwards, no matter your rotation.
+  - The rocket booster will push you towards the top of your acorn, orient yourself
+    correctly!
+  - Certain upgrades will reveal more upgrades when purchased.
+  - The last row of upgrades are all powerups that can spawn in the world once you
+    get them!
 --- !u!114 &1890465657
 MonoBehaviour:
   m_ObjectHideFlags: 0
