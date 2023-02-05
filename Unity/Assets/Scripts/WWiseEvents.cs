@@ -40,4 +40,10 @@ public class WWiseEvents : MonoBehaviour
         Debug.Log("i sold my soul for 5 points");
         AkSoundEngine.PostEvent("shop_sell", gameObject);
     }
+
+    public void onDelete()
+    {
+        Debug.Log("This is so sad, can we hit 30 children?");
+        AkSoundEngine.PostEvent("save_delete", gameObject);
+    }
 }
