@@ -9,11 +9,13 @@ public class Seed_Controller : MonoBehaviour
     public LayerMask groundLayer;
     public float sailModifier;
     public GameObject mainWind;
+    public float windModifier;
 
     // Upgrades
     public int sail;
     public int gravity;
     public int weight;
+    public int wind;
 
     // Hint Text
     public GameObject hintText;
@@ -26,8 +28,8 @@ public class Seed_Controller : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        rb.gravityScale = 0.25f * (1.0f - 0.125f * gravity);
-        rb.mass = 4.0f * (1.0f - 0.0625f * weight);
+        rb.gravityScale = 0.5f * (1.0f - 0.125f * gravity);
+        rb.mass = 2.0f * (1.0f - 0.0625f * weight);
     }
 
     // Update is called once per frame
@@ -72,24 +74,24 @@ public class Seed_Controller : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         // Catches the wind
-        if (collision.name == "Wind")
+        if (collision.name == "Wind(Clone)")
         {
-            rb.AddForce(collision.transform.right * collision.GetComponent<Wind_Script>().strength);
+            rb.AddForce(collision.transform.right * collision.GetComponent<Wind_Script>().strength * (1.0f + windModifier * (float)wind));
 
             // Calculates the sail effect
             if (grounded == false)
             {
-                rb.AddForce(transform.up * (collision.GetComponent<Wind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail / sailModifier));
+                rb.AddForce(transform.up * (collision.GetComponent<Wind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
             }
         }
         else if (collision.name == "MainWind")
         {
-            rb.AddForce(collision.transform.right * collision.GetComponent<MainWind_Script>().strength);
+            rb.AddForce(collision.transform.right * collision.GetComponent<MainWind_Script>().strength * (1.0f + windModifier * (float)wind));
 
             // Calculates the sail effect
             if (grounded == false)
             {
-                rb.AddForce(transform.up * (collision.GetComponent<MainWind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail / sailModifier));
+                rb.AddForce(transform.up * (collision.GetComponent<MainWind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
             }
         }
     }

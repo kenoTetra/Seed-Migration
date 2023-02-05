@@ -192,11 +192,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
---- !u!1 &234226951 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 345846265228706931, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
-  m_PrefabInstance: {fileID: 345846266674105961}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &234226957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 345846265228706932, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
@@ -420,11 +415,6 @@ MonoBehaviour:
   xOffset: 7
   yOffset: 2
   minX: -99
---- !u!1 &405815110 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 345846265228706931, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
-  m_PrefabInstance: {fileID: 1502766867}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &405815111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 345846265228706932, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
@@ -503,6 +493,7 @@ MonoBehaviour:
   clock: {fileID: 650847055}
   clockFill: {fileID: 1538745894}
   timeoutTime: 4
+  preventTime: 0.33
 --- !u!4 &546027288
 Transform:
   m_ObjectHideFlags: 0
@@ -791,11 +782,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30893ac8716f88a45b5b5a8e23319343, type: 3}
---- !u!1 &961246886 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 345846265228706931, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
-  m_PrefabInstance: {fileID: 232670527}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &961246887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 345846265228706932, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
@@ -1761,13 +1747,9 @@ MonoBehaviour:
   - {fileID: 484639490}
   - {fileID: 284984931}
   windPrefab: {fileID: 345846265228706931, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
-  windObjects:
-  - {fileID: 234226951}
-  - {fileID: 405815110}
-  - {fileID: 961246886}
-  - {fileID: 1940602175}
-  - {fileID: 0}
-  - {fileID: 0}
+  windObjectsLeft: []
+  windObjectsCenter: []
+  windObjectsRight: []
 --- !u!4 &1842696404
 Transform:
   m_ObjectHideFlags: 0
@@ -1946,11 +1928,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939690734}
   m_CullTransparentMesh: 1
---- !u!1 &1940602175 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 345846265228706931, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
-  m_PrefabInstance: {fileID: 810239828}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1940602176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 345846265228706932, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}

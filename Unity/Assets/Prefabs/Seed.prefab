@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 4
+  m_Mass: 2
   m_LinearDrag: 0.05
   m_AngularDrag: 0.3
   m_GravityScale: 0.25
@@ -124,11 +124,13 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  sailModifier: 1
+  sailModifier: 4
   mainWind: {fileID: 0}
+  windModifier: 0.0625
   sail: 0
   gravity: 0
   weight: 0
+  wind: 0
   hintText: {fileID: 0}
 --- !u!60 &5568644605321107805
 PolygonCollider2D:

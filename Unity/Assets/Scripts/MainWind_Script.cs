@@ -22,7 +22,7 @@ public class MainWind_Script : MonoBehaviour
         var particleSpeed = GetComponent<ParticleSystem>().main;
         var particleEmission = GetComponent<ParticleSystem>().emission;
 
-        if (strength >= 0.25f)
+        if (strength >= 1.0f)
         {
             particleSpeed.startSpeedMultiplier = strength / 10.0f;
             particleSpeed.startLifetimeMultiplier = 6 / strength;
