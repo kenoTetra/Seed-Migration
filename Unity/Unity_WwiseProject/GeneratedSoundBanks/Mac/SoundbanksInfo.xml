@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{34CD6E87-AF35-7746-2154-115C304F25CC}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{80A8E847-9F96-53EA-D248-0B4A80460110}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -121,6 +121,10 @@
 				<File Id="431371950" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Acorn Bounces(4).wav</ShortName>
 					<CachePath>SFX/Acorn Bounces(4)_10B2B7AD.wem</CachePath>
+				</File>
+				<File Id="432148560" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>gameplay_music.wav</ShortName>
+					<CachePath>SFX/gameplay_music_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="541353244" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Acorn Land(5).wav</ShortName>
@@ -247,6 +251,11 @@
 						<MediaRef Id="15411689"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1072299391" Name="music_game" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="432148560"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3229152761" Name="music_shop" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="204446405"/>
@@ -309,5 +318,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5AFDB99D-F854-E8A6-F306-D7EFFDEC6DB7}</FileHash>
+	<FileHash>{FC08A859-8324-A10A-4ACE-AA80C3B142CA}</FileHash>
 </SoundBanksInfo>

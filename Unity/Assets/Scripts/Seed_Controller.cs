@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AK.Wwise;
 
 public class Seed_Controller : MonoBehaviour
 {
@@ -38,13 +39,19 @@ public class Seed_Controller : MonoBehaviour
     // Hint Text
     public GameObject hintText;
 
+    // Sound trigger bools
+    private bool soundWind,soundBounce,soundRocket,soundGerminate;
+    private bool inWind;
+
     // References
     private Rigidbody2D rb;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         rb.gravityScale = 0.5f * (1.0f - 0.125f * gravity);
         rb.mass = 2.0f * (1.0f - 0.0625f * weight);
@@ -62,15 +69,21 @@ public class Seed_Controller : MonoBehaviour
         windPower = checkSetKeyBool("AirCurrent");
         leafPower = checkSetKeyBool("Leaves");
         pointPower = checkSetKeyBool("GenomePickups");
+
+        animator.SetBool("Rocket", rocket);
+        animator.SetBool("Leaf", germination);
     }
 
     // Update is called once per frame
     void Update()
     {
+        playSoundOnce();
+
         if (Input.GetButtonDown("Jump"))
         {
             hintText.SetActive(false);
             mainWind.SetActive(true);
+            AkSoundEngine.PostEvent("acorn_detach", gameObject);
             rb.simulated = true;
         }
 
@@ -190,6 +203,9 @@ public class Seed_Controller : MonoBehaviour
             {
                 rb.AddForce(transform.up * (collision.GetComponent<Wind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
             }
+
+            inWind = true;
+
         }
         else if (collision.name == "MainWind")
         {
@@ -200,6 +216,21 @@ public class Seed_Controller : MonoBehaviour
             {
                 rb.AddForce(transform.up * (collision.GetComponent<MainWind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
             }
+
+            inWind = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if(col.name == "Wind(Clone)")
+        {
+            inWind = false;
+        }
+
+        if(col.name == "MainWind")
+        {
+            inWind = false;
         }
     }
 
@@ -222,5 +253,74 @@ public class Seed_Controller : MonoBehaviour
         }
 
         return false;
+    }
+
+    void playSoundOnce()
+    {
+        //soundWind,soundBounce,soundRocket,soundGerminate;
+
+        // Bouncing sound
+        if(grounded && !soundBounce)
+        {
+            AkSoundEngine.PostEvent("acorn_bounces", gameObject);
+            soundBounce = true;
+        }
+
+        else if(!grounded && soundBounce)
+        {
+            soundBounce = false;
+        }
+
+        // Rocket sound
+        if(rocket && fuelTank > 0f && Input.GetButton("Fire1") && !soundRocket)
+        {
+            AkSoundEngine.StopAll(gameObject);
+            AkSoundEngine.PostEvent("rocket_thrusters", gameObject);
+            soundRocket = true;
+            animator.SetBool("RocketFire", true);
+        }
+
+        else if(rocket && !Input.GetButton("Fire1") && soundRocket)
+        {
+            AkSoundEngine.StopAll(gameObject);
+            soundRocket = false;
+            animator.SetBool("RocketFire", false);
+        }
+
+        if(fuelTank <= 0f && soundRocket)
+        {
+            AkSoundEngine.StopAll(gameObject);
+            soundRocket = false;
+            animator.SetBool("RocketFire", false);
+        }
+
+        // Propeller sound
+        if(germinationTimer > 0.0f && Input.GetButtonDown("Fire2") && !soundGerminate)
+        {
+            AkSoundEngine.StopAll(gameObject);
+            AkSoundEngine.PostEvent("sail_open", gameObject);
+            soundGerminate = true;
+            animator.SetBool("LeafSpin", true);
+        }
+
+        else if(germinationTimer < 0.0f && !Input.GetButtonDown("Fire2") && soundGerminate)
+        {
+            AkSoundEngine.StopAll(gameObject);
+            soundGerminate = false;
+            animator.SetBool("LeafSpin", false);
+        }
+
+        // Wind sound
+
+        if(inWind && !soundWind)
+        {
+           AkSoundEngine.PostEvent("wind_gust_light", gameObject); 
+           soundWind = true;
+        }
+
+        else if(!inWind && soundWind)
+        {
+            soundWind = false;
+        }
     }
 }

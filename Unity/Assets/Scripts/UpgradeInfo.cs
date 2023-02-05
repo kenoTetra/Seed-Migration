@@ -13,6 +13,9 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public int price = 10;
     public bool expPriceInc;
     public GameObject[] unlockables;
+    public Animator acornAnimator;
+    public bool acornAnimBool;
+    public string acornAnimString;
     [Space(5)]
 
     [Header("Tooltip Information")]
@@ -52,6 +55,9 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
                 // Animator update
                 updateAnimator();
+
+                // Acorn animation (if active)
+                animateAcorn();
             
                 // Take the man's money
                 uui.useScore(-price);
@@ -145,6 +151,9 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             }
 
             updateAnimator();
+
+            // If acorn real
+            animateAcorn();
         }
     }
 
@@ -152,6 +161,16 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         animator.SetInteger("Level", level);
     }
+
+    // ACORN ANIMATIONS \\
+    public void animateAcorn()
+    {
+        if(acornAnimator != null)
+        {
+            acornAnimator.SetBool(acornAnimString, acornAnimBool);
+        }
+    }
+
 
     // TOOLTIP HANDLERS \\
     public void OnPointerEnter(PointerEventData pointerEventData)

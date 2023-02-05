@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 845651198232919414}
   - component: {fileID: 1065946315}
   - component: {fileID: 5568644605321107805}
+  - component: {fileID: 8112236209691532481}
   m_Layer: 0
   m_Name: Seed
   m_TagString: Seed
@@ -214,6 +215,26 @@ PolygonCollider2D:
       - {x: 0.01171875, y: -0.453125}
       - {x: 0.04296875, y: -0.44921875}
       - {x: 0.15234375, y: -0.38671875}
+--- !u!95 &8112236209691532481
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845651198232919415}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5b5680ae3992014e8fa3bf2dcc60997, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2826954066610680109
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +307,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 101
   m_Sprite: {fileID: 21300000, guid: 9473533b10c18b94a9d285557ec82598, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -5,6 +5,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	550138126	rocket_thrusters			\Default Work Unit\rocket_thrusters	
 	657901810	wind_gust_light			\Default Work Unit\wind_gust_light	
 	733168346	game_start			\Default Work Unit\game_start	
+	1072299391	music_game			\Default Work Unit\music_game	
 	1310327096	shop_sell			\Default Work Unit\shop_sell	
 	1428582982	shop_max			\Default Work Unit\shop_max	
 	1495252156	shop_buy			\Default Work Unit\shop_buy	
@@ -43,6 +44,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	418468873	Sail_01	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\188733__sauron974__cloth-flaps_B7E94536.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sail\Sail_01		125532
 	424712786	Shop Sell Silly	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Shop Sell Silly_F422F8BC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shop Sounds\Shop Sell Silly		109136
 	431371950	Acorn Bounces(1)	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Acorn Bounces(4)_10B2B7AD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Bounces(1)		305368
+	432148560	gameplay_music	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\gameplay_music_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\gameplay_music		9513580
 	541353244	Acorn Land(5)_01	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Acorn Land(5)_208C84A3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Land(5)_01		172476
 	562261301	Buy	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\Buy_A1ABAD2D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shop Sounds\Buy		89224
 	625759354	Sail_03	C:\Users\Tetra\Desktop\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Mac\SFX\188733__sauron974__cloth-flaps_73F17847.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sail\Sail_03		190800
