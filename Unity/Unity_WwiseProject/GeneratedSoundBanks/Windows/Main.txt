@@ -1,0 +1,53 @@
+Event	ID	Name			Wwise Object Path	Notes
+	85412153	ambience			\Default Work Unit\ambience	
+	175705637	clock_ticking			\Default Work Unit\clock_ticking	
+	309439191	menu_hover			\Default Work Unit\menu_hover	
+	550138126	rocket_thrusters			\Default Work Unit\rocket_thrusters	
+	657901810	wind_gust_light			\Default Work Unit\wind_gust_light	
+	733168346	game_start			\Default Work Unit\game_start	
+	1310327096	shop_sell			\Default Work Unit\shop_sell	
+	1495252156	shop_buy			\Default Work Unit\shop_buy	
+	1817250657	sail_open			\Default Work Unit\sail_open	
+	2086719034	acorn_detach			\Default Work Unit\acorn_detach	
+	2283422187	wind_gust_heavy			\Default Work Unit\wind_gust_heavy	
+	3180909377	menu_cancel			\Default Work Unit\menu_cancel	
+	4046753069	menu_confirm			\Default Work Unit\menu_confirm	
+	4145930322	acorn_bounces			\Default Work Unit\acorn_bounces	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	15411689	Axe 1016_69	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Axe 1016_69_8115CC9D.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Axe 1016_69		223824
+	42085038	Rocket_Thrusters_Start	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Rocket_Thrusters_Start_A4C9F85A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ROCKET THRUSTERS!!!!\Rocket_Thrusters_Start		491980
+	72869770	Shop Buy Silly	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Shop Buy Silly_F7A3C243.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shop Sounds\Shop Buy Silly		594328
+	80710655	BG 1	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\BG 1_BB6AFB9C.wem		\Actor-Mixer Hierarchy\Default Work Unit\BG 1		30719332
+	148913618	Wind_Gust06	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust06		304224
+	149928363	Menu Cancel	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Menu Cancel_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Menu Cancel		222920
+	163184666	Wind_Gust08	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust08_DB471DA5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust08		219132
+	183220830	Detatch Wood 2	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Detatch Wood 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Detach\Detatch Wood 2		97652
+	189749510	Wind_Gust07	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust07_FC724D98.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust07		188430
+	212557349	Acorn Bounces(3)	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Acorn Bounces(4)_74F21ABC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Bounces(3)		342060
+	251566777	Sail	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\188733__sauron974__cloth-flaps_5FBE17FE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sail\Sail		227276
+	265017521	Game Start A	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Game Start A_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Game Start A		242624
+	266493118	Wind_Gust09	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust09_804D04F2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust09		151772
+	285300698	Clock	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\HousholdAlarm DM006_70_1C0379F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Clock		658660
+	288879332	Acorn Land(5)_02	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Acorn Land(5)_AB33AFEC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Land(5)_02		222060
+	303216386	Wind_Gust04	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust04_D40A6242.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust04		195130
+	306894844	Rocket_Thrusters_Loop	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Rocket_Thrusters_Loop_61B31EAA.wem		\Actor-Mixer Hierarchy\Default Work Unit\ROCKET THRUSTERS!!!!\Rocket_Thrusters_Loop		2357364
+	349773284	Wind_Gust05	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust05_3F392650.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust05		230134
+	369119737	Sell	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Sell_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shop Sounds\Sell		242624
+	418468873	Sail_01	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\188733__sauron974__cloth-flaps_A852E68A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sail\Sail_01		125532
+	424712786	Shop Sell Silly	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Shop Sell Silly_D610319F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shop Sounds\Shop Sell Silly		109136
+	431371950	Acorn Bounces(1)	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Acorn Bounces(4)_EF5D760C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Bounces(1)		305368
+	541353244	Acorn Land(5)_01	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Acorn Land(5)_0F63C0D4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Land(5)_01		172476
+	562261301	Buy	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Buy_2138EC9F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shop Sounds\Buy		89224
+	625759354	Sail_03	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\188733__sauron974__cloth-flaps_904D303F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sail\Sail_03		190800
+	683084834	Acorn Land(5)	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Acorn Land(5)_39E0234A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Land(5)		212908
+	692209920	Menu Hover	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Menu Hover_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Menu Hover		242624
+	733718514	Sail_02	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\188733__sauron974__cloth-flaps_67889D55.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sail\Sail_02		164536
+	756348643	Heavy Wind Gust 1	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Heavy Wind Gust 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Heavy Wind Gust\Heavy Wind Gust 1		614860
+	759821067	Acorn Bounces(4)	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Acorn Bounces(4)_104DB9E9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Bounces(4)		201584
+	794867995	Wind_Gust10	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Wind_Gust10_21E80100.wem		\Actor-Mixer Hierarchy\Default Work Unit\Light Wind Gust\Wind_Gust10		268688
+	812947597	Heavy Wind Gust 2	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Heavy Wind Gust 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Heavy Wind Gust\Heavy Wind Gust 2		917704
+	815048794	Menu Confirm A	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Menu Confirm A_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI sounds\Menu Confirm A		222920
+	852547647	Acorn Bounces(2)	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Acorn Bounces(4)_5EC87583.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Bounce\Acorn Bounces(2)		281484
+	980213962	Detatch Wood 1	C:\Users\soap\Documents\GitHub\Yoinky-Sploinky\Unity\Unity_WwiseProject\.cache\Windows\SFX\Detatch Wood 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Acorn Detach\Detatch Wood 1		163068
+

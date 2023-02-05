@@ -1135,20 +1135,6 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
-					<ObjectLists>
-						<ObjectList Name="RTPC">
-							<Reference>
-								<Local>
-									<RTPC Name="" ID="{36901A3E-3F8F-4B26-B507-0F06B31442B5}" ShortID="81845863">
-										<PropertyList>
-											<Property Name="PropertyName" Type="string" Value="Volume"/>
-										</PropertyList>
-										<ReferenceList/>
-									</RTPC>
-								</Local>
-							</Reference>
-						</ObjectList>
-					</ObjectLists>
 					<ActiveSourceList>
 						<ActiveSource Name="BG 1" ID="{EA61D830-8E85-476B-98A5-F880E2343035}" Platform="Linked"/>
 					</ActiveSourceList>
