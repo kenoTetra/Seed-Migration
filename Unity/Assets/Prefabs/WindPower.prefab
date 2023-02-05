@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 9077976109641720452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.94, y: 3.07, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e756d8ff5fcb1944bbf1f9521188398, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f084cb84f4109c14ebdb60c03a82a89d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,9 +99,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.06, y: -0.09}
   serializedVersion: 2
-  m_Radius: 1.28
+  m_Radius: 0.8
 --- !u!114 &9077976109641720451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,3 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windCurrent: {fileID: 345846265228706931, guid: 1cd4517339fbd7a46b1f933e76dd4116, type: 3}
+  cameraObject: {fileID: 0}

@@ -127,7 +127,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  sailModifier: 3.5
+  sailModifier: 3
   mainWind: {fileID: 0}
   windModifier: 0.0625
   fuelTank: 0
@@ -151,6 +151,10 @@ MonoBehaviour:
   leafPower: 0
   pointPower: 0
   hintText: {fileID: 0}
+  fuelUI: {fileID: 0}
+  leafUI: {fileID: 0}
+  fuelUIFill: {fileID: 0}
+  leafUIFill: {fileID: 0}
 --- !u!60 &5568644605321107805
 PolygonCollider2D:
   m_ObjectHideFlags: 0
