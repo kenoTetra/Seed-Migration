@@ -26,7 +26,7 @@ public class Seed_Controller : MonoBehaviour
     public int weight;
     public int wind;
     public bool rocket;
-    public int rocketStrength;
+    public float rocketStrength;
     public int rocketFuel;
     public bool germination;
     public int germinationDuration;
@@ -65,7 +65,7 @@ public class Seed_Controller : MonoBehaviour
         sail = checkSetKeyInt("Sail");
         weight = checkSetKeyInt("Mass");
         rocket = checkSetKeyBool("Rocket");
-        rocketStrength = checkSetKeyInt("RocketSpeed");
+        rocketStrength = checkSetKeyInt("RocketSpeed") / 10f;
         rocketFuel = checkSetKeyInt("Fuel");
         germination = checkSetKeyBool("Germination");
         germinationDuration = checkSetKeyInt("Sugar");
