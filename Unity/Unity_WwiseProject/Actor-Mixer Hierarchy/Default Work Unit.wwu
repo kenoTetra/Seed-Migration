@@ -625,6 +625,28 @@
 								<ActiveSource Name="Axe 1016_69" ID="{AF5FA491-C1AD-453F-B005-699B52B22F0F}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="shop max" ID="{210F4C49-D1A8-40D4-A3EA-D94E11A48297}" ShortID="311222779">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C00F25C1-59E0-46ED-8E09-F2C8E2A66CD9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4A22707A-6017-4F89-9153-A4A6C24DE925}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="shop max" ID="{E3DAF492-CFC2-45D0-8DF2-AEAB3B0AD938}">
+									<Language>SFX</Language>
+									<AudioFile>shop max.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1049114673"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="shop max" ID="{E3DAF492-CFC2-45D0-8DF2-AEAB3B0AD938}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<RandomSequenceContainer Name="Light Wind Gust" ID="{AB3C23E3-B04A-41DC-9396-1A581F788EB3}" ShortID="489654496">

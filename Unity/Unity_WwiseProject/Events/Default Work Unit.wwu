@@ -223,6 +223,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="shop_max" ID="{0602AEB3-6DDF-4340-AED6-18042A81068F}">
+					<ChildrenList>
+						<Action Name="" ID="{D1226E03-69E9-470A-B220-12A65E6E621D}" ShortID="798556390">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="shop max" ID="{210F4C49-D1A8-40D4-A3EA-D94E11A48297}" WorkUnitID="{A24AF51F-6AB3-44D8-8DF7-9A63835EFD2B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
