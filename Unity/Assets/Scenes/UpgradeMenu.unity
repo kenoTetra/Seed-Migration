@@ -971,7 +971,7 @@ MonoBehaviour:
   level: 0
   maxLevel: 1
   prefKey: Leaves
-  price: 1000
+  price: 500
   expPriceInc: 0
   unlockables: []
   acornAnimator: {fileID: 0}
