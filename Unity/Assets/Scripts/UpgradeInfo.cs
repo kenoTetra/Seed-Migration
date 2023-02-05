@@ -11,6 +11,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public int maxLevel = 4;
     public string prefKey;
     public int price = 10;
+    public int multpVal = 2;
     public bool expPriceInc;
     public GameObject[] unlockables;
     public Animator acornAnimator;
@@ -41,7 +42,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         updateInfo();
     }
-    
+
     public void buyUpgrade()
     {
         if(uui.score >= price)
@@ -74,7 +75,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
                 else
                 {
-                    price += price;
+                    price = price * multpVal;
                 }
 
                 priceSaved = price;
@@ -139,7 +140,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
                 else
                 {
-                    price += price;
+                    price = price * multpVal;
                 }
             }
 

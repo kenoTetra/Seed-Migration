@@ -1048,6 +1048,7 @@ MonoBehaviour:
   maxLevel: 1
   prefKey: Leaves
   price: 2500
+  multpVal: 2
   expPriceInc: 0
   unlockables: []
   acornAnimator: {fileID: 0}
@@ -1056,6 +1057,7 @@ MonoBehaviour:
   title: Is it fall yet?
   body: Unlocks a pickup that increases your sail upgrade by 1 (can go over max!)
     for a short time.
+  isMaxLevel: 0
 --- !u!114 &202901093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1260,7 @@ MonoBehaviour:
   maxLevel: 1
   prefKey: Germination
   price: 150
+  multpVal: 2
   expPriceInc: 0
   unlockables:
   - {fileID: 1741251969}
@@ -1269,6 +1272,7 @@ MonoBehaviour:
   body: Propell yourself upwards with this upgrade. Sprouts a leaf from your acorn
     which allows you to fly like a helicopter for a small period of time by pressing
     2.
+  isMaxLevel: 0
 --- !u!114 &319968405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5678,6 +5682,7 @@ MonoBehaviour:
   maxLevel: 1
   prefKey: FuelPower
   price: 2500
+  multpVal: 2
   expPriceInc: 0
   unlockables: []
   acornAnimator: {fileID: 0}
@@ -5685,6 +5690,7 @@ MonoBehaviour:
   acornAnimString: 
   title: Heilium-infused Fuel
   body: Unlocks a pickup that restores half a unit of fuel.
+  isMaxLevel: 0
 --- !u!114 &1540787107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6949,6 +6955,7 @@ MonoBehaviour:
   maxLevel: 1
   prefKey: GenomePickups
   price: 100
+  multpVal: 2
   expPriceInc: 0
   unlockables:
   - {fileID: 1982360307}
@@ -6957,6 +6964,7 @@ MonoBehaviour:
   acornAnimString: 
   title: Pollen Nation
   body: Unlocks a pickup that gives you 100 points on pickup!
+  isMaxLevel: 0
 --- !u!114 &1811025773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7349,6 +7357,7 @@ MonoBehaviour:
   maxLevel: 1
   prefKey: AirCurrent
   price: 10000
+  multpVal: 2
   expPriceInc: 0
   unlockables: []
   acornAnimator: {fileID: 0}
@@ -7357,6 +7366,7 @@ MonoBehaviour:
   title: Dandelion Lift
   body: Unlocks a pickup that makes an air current on your location that's in the
     perfect conditions!
+  isMaxLevel: 0
 --- !u!114 &1878054485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8494,8 +8504,12 @@ PrefabInstance:
       value: Sail
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
+      propertyPath: multpVal
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: expPriceInc
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6967020972463479723, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
       propertyPath: unlockables.Array.size
@@ -8579,6 +8593,7 @@ MonoBehaviour:
   maxLevel: 1
   prefKey: Rocket
   price: 150
+  multpVal: 2
   expPriceInc: 0
   unlockables:
   - {fileID: 1033583739}
@@ -8590,3 +8605,4 @@ MonoBehaviour:
   title: Rocket Booster
   body: Show off your technological might with this upgrade! Straps a rocket booster
     to your acorn which can be activated by pressing 1.
+  isMaxLevel: 0
