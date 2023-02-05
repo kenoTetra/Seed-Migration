@@ -2294,6 +2294,7 @@ MonoBehaviour:
   windPower: {fileID: 9077976109641720452, guid: 5174187e3d6c84b45a12ccf826a661ff, type: 3}
   leafPower: {fileID: 5568904267100586618, guid: f38738c18d0949c46b2230a29fad0ef4, type: 3}
   pointPower: {fileID: 7915846989236942751, guid: 5ed6318f9a3af6b4cb7eed74c03bbefb, type: 3}
+  fuelPower: {fileID: 7915846989236942751, guid: 1dd3ec7502f13b349b5371aaf776c475, type: 3}
 --- !u!4 &1842696404
 Transform:
   m_ObjectHideFlags: 0
