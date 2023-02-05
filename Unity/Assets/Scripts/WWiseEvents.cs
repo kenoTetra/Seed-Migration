@@ -13,7 +13,6 @@ public class WWiseEvents : MonoBehaviour
 
     public void onHover()
     {
-        Debug.Log("will they won't they");
         AkSoundEngine.PostEvent("menu_hover", gameObject);
     }
 
@@ -27,18 +26,6 @@ public class WWiseEvents : MonoBehaviour
     {
         Debug.Log("Start/Continue");
         AkSoundEngine.PostEvent("game_start", gameObject);
-    }
-
-    public void onPurchase()
-    {
-        Debug.Log("i bought dick for three ninty nine");
-        AkSoundEngine.PostEvent("shop_buy", gameObject);
-    }
-
-    public void onSell()
-    {
-        Debug.Log("i sold my soul for 5 points");
-        AkSoundEngine.PostEvent("shop_sell", gameObject);
     }
 
     public void onDelete()

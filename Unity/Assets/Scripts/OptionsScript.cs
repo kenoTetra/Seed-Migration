@@ -11,7 +11,6 @@ public class OptionsScript : MonoBehaviour
     public List<resItem> resolutions = new List<resItem>();
     private int resIndex;
     public TMP_Text resLabel;
-    private bool foundRes;
 
     void Start()
     {
@@ -20,7 +19,6 @@ public class OptionsScript : MonoBehaviour
         {
             if(Screen.width == resolutions[i].horizontal && Screen.height == resolutions[i].vertical)
             {
-                foundRes = true;
                 resIndex = i;
                 updateResLabel();
             }

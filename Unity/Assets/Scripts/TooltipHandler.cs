@@ -7,9 +7,10 @@ public class TooltipHandler : MonoBehaviour
 {
     public static TooltipHandler instance;
 
-    public TMP_Text title,body,cost;
+    public TMP_Text title,body,cost,level;
 
     public string symbol = " pts";
+    public string levelText = "Lvl. ";
 
     void Awake()
     {
@@ -36,12 +37,13 @@ public class TooltipHandler : MonoBehaviour
         transform.position = Input.mousePosition;
     }
 
-    public void setShowTooltip(string titleString, string bodyString, int price)
+    public void setShowTooltip(string titleString, string bodyString, int price, int found_level)
     {
         gameObject.SetActive(true);
         title.text = titleString;
         body.text = bodyString;
         cost.text = price.ToString() + symbol;
+        level.text = levelText + found_level.ToString();
     }
 
     public void hideTooltip()
@@ -50,5 +52,6 @@ public class TooltipHandler : MonoBehaviour
         title.text = string.Empty;
         body.text = string.Empty;
         cost.text = string.Empty;
+        level.text = string.Empty;
     }
 }
