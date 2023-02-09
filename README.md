@@ -1,4 +1,5 @@
-# Yoinky-Sploinky
+# Seed Migration
+by Yoinky Sploinky
 
 Yoinky Sploinky members are:
 
@@ -19,3 +20,5 @@ Created for The Global Game Jam®
 https://globalgamejam.org/2023/jam-sites/digipen-institute-technology-redmond-campus
 
 https://globalgamejam.org/legal-policies
+
+Updated past the GGJ-2023 as of 2/8/23.
