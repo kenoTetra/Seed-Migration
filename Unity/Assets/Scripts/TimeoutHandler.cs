@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using AK.Wwise;
 
 public class TimeoutHandler : MonoBehaviour
 {
@@ -27,7 +26,6 @@ public class TimeoutHandler : MonoBehaviour
     private ScoreHandler sh;
     private TransitionHandler th;
     private Rigidbody2D rb;
-    private MusicHandler mh;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +33,6 @@ public class TimeoutHandler : MonoBehaviour
         // Reference data.
         sh = FindObjectOfType<ScoreHandler>();
         th = FindObjectOfType<TransitionHandler>();
-        mh = FindObjectOfType<MusicHandler>();
         rb = GameObject.FindWithTag("Seed").GetComponent<Rigidbody2D>();
     }
 
@@ -72,7 +69,7 @@ public class TimeoutHandler : MonoBehaviour
         
         if(!soundTimer)
         {
-            AkSoundEngine.PostEvent("clock_ticking", gameObject);
+            // clock ticking noise
             soundTimer = true;
         }
 
@@ -81,8 +78,8 @@ public class TimeoutHandler : MonoBehaviour
         {
             sh.pushScore();
             th.changeScene("UpgradeMenu");
-            mh.stopSounds();
-            AkSoundEngine.PostEvent("game_start", gameObject);
+            // stop music
+            // return to shop sound
             timedOut = true;
             yield break;
         }
@@ -101,6 +98,6 @@ public class TimeoutHandler : MonoBehaviour
 
     void stopClock()
     {
-        AkSoundEngine.StopAll(gameObject);
+        // stop clock sound
     }
 }

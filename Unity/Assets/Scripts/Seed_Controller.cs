@@ -4,7 +4,6 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using AK.Wwise;
 
 public class Seed_Controller : MonoBehaviour
 {
@@ -69,7 +68,13 @@ public class Seed_Controller : MonoBehaviour
     public string distanceBlurb = "Distance:";
     public string heightBlurb = "Height: ";
     public string velocityBlurb = "Velocity:";
-    public string unitBlurb = "m/s";
+    public string unitBlurb = "m";
+    [Space(5)]
+
+    [Header("Audio")]
+    public AudioSource rocket_aud;
+    public AudioClip bounceClip,windClip,detatchClip,rocketClip;
+    public AudioClip germinationClip;
     [Space(5)]
 
     [Header("Reference Data")]
@@ -84,6 +89,7 @@ public class Seed_Controller : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private ScoreHandler sh;
+    private AudioSource aud;
 
     // Start is called before the first frame update
     void Start()
@@ -92,6 +98,7 @@ public class Seed_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sh = FindObjectOfType<ScoreHandler>();
+        aud = GetComponent<AudioSource>();
 
         // get upgrades
         sail = checkSetKeyInt("Sail") / 2f;
@@ -144,7 +151,7 @@ public class Seed_Controller : MonoBehaviour
         {
             hintText.SetActive(false);
             mainWind.SetActive(true);
-            AkSoundEngine.PostEvent("acorn_detach", gameObject);
+            aud.PlayOneShot(detatchClip);
             rb.simulated = true;
         }
 
@@ -367,7 +374,8 @@ public class Seed_Controller : MonoBehaviour
         // Bouncing sound
         if(grounded && !soundBounce)
         {
-            AkSoundEngine.PostEvent("acorn_bounces", gameObject);
+            // acorn bounce
+            aud.PlayOneShot(bounceClip);
             soundBounce = true;
         }
 
@@ -379,22 +387,30 @@ public class Seed_Controller : MonoBehaviour
         // Rocket sound
         if(rocket && fuelTank > 0f && Input.GetButton("Fire1") && !soundRocket && rb.simulated)
         {
-            AkSoundEngine.StopAll(gameObject);
-            AkSoundEngine.PostEvent("rocket_thrusters", gameObject);
+            // rocket thrusters
+            aud.PlayOneShot(rocketClip);
             soundRocket = true;
             animator.SetBool("RocketFire", true);
         }
 
+        // Plays audio loop if rocket start is done
+        else if(rocket && fuelTank > 0f && Input.GetButton("Fire1") && soundRocket && rb.simulated && !aud.isPlaying)
+        {
+            rocket_aud.Play();
+        }
+
         else if(rocket && !Input.GetButton("Fire1") && soundRocket)
         {
-            AkSoundEngine.StopAll(gameObject);
+            // stop rocket fire
+            rocket_aud.Stop();
             soundRocket = false;
             animator.SetBool("RocketFire", false);
         }
 
         if(fuelTank <= 0f && soundRocket)
         {
-            AkSoundEngine.StopAll(gameObject);
+            // stop rocket fire
+            rocket_aud.Stop();
             soundRocket = false;
             animator.SetBool("RocketFire", false);
         }
@@ -402,15 +418,15 @@ public class Seed_Controller : MonoBehaviour
         // Propeller sound
         if(germinationTimer > 0.0f && Input.GetButtonDown("Fire2") && !soundGerminate && rb.simulated)
         {
-            AkSoundEngine.StopAll(gameObject);
-            AkSoundEngine.PostEvent("sail_open", gameObject);
+            // open sail
+            aud.PlayOneShot(germinationClip);
             soundGerminate = true;
             animator.SetBool("LeafSpin", true);
         }
 
         else if(germinationTimer < 0.0f && !Input.GetButtonDown("Fire2") && soundGerminate)
         {
-            AkSoundEngine.StopAll(gameObject);
+            // stop sail
             soundGerminate = false;
             animator.SetBool("LeafSpin", false);
         }
@@ -419,7 +435,8 @@ public class Seed_Controller : MonoBehaviour
 
         if(inWind && !soundWind)
         {
-           AkSoundEngine.PostEvent("wind_gust_light", gameObject); 
+           // wind sound
+           aud.PlayOneShot(windClip);
            soundWind = true;
         }
 
@@ -440,13 +457,13 @@ public class Seed_Controller : MonoBehaviour
             fuelUIFill.fillAmount = fuelTank / (3.0f + (1.0f * rocketFuel));
 
         // Update the distance text.
-        distance.text = distanceBlurb + " " + toNearestTenth((transform.position.x - sampleStartPos.x)).ToString();
+        distance.text = distanceBlurb + " " + toNearestTenth((transform.position.x - sampleStartPos.x)).ToString() + unitBlurb;
 
         // Update the height text.
-        height.text = heightBlurb + " " + toNearestTenth((transform.position.y - sampleStartPos.y)).ToString();
+        height.text = heightBlurb + " " + toNearestTenth((transform.position.y - sampleStartPos.y)).ToString() + unitBlurb;
 
         // Update the velocity text.
-        velocity.text = velocityBlurb + " " + toNearestTenth(rb.velocity.x).ToString() + unitBlurb;
+        velocity.text = velocityBlurb + " " + toNearestTenth(rb.velocity.x).ToString() + unitBlurb + "/s";
 
 
     }

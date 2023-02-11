@@ -51,7 +51,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             {
                 // Sound!
                 Debug.Log("i bought dick for three ninty nine");
-                AkSoundEngine.PostEvent("shop_buy", gameObject);
+                // buy sound here
 
                 // Info update
                 level++;
@@ -100,22 +100,16 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             else
             {
                 Debug.Log("you're ALREADY rich dude, fuck off!!!");
-                AkSoundEngine.PostEvent("shop_max", gameObject);
+                // shop max sound
             }  
         }
 
         else
         {
             Debug.Log("YOU''RE FUCKING POOR");
-            AkSoundEngine.PostEvent("menu_cancel", gameObject);
+            // menu cancel sound
         }
 
-    }
-
-    public void sellUpgrade()
-    {
-        Debug.Log("i sold my soul for 5 points");
-        AkSoundEngine.PostEvent("shop_sell", gameObject);
     }
 
     void updateInfo()
