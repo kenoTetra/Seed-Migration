@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using AK.Wwise;
 
 public class Seed_Controller : MonoBehaviour
 {
+    [Header("Normal Data")]
     public bool grounded;
     public RaycastHit2D downRay;
     public LayerMask groundLayer;
@@ -21,8 +23,9 @@ public class Seed_Controller : MonoBehaviour
     public GameObject scoreHandler;
     public float leafPowerTimer;
     public float velYClamp = 35f;
+    [Space(5)]
 
-    // Upgrades
+    [Header("Upgrades")]
     public float sail;
     public int gravity;
     public int weight;
@@ -37,28 +40,41 @@ public class Seed_Controller : MonoBehaviour
     public int jermaSpeed;
     public int clamp;
     public int turnStab;
+    [Space(5)]
 
     // Balance Data
+    [Header("Upgrade Balance")]
     public float rocketStrengthBalance = 6f;
     public float fuelEffBalance = .5f;
     public float jermaSpeedBalance = .5f;
     public float clampBalance = 1.25f;
     public float turnStabBalance = .5f;
+    [Space(5)]
 
     // Powers
+    [Header("Active Powerups")]
     public bool windPower;
     public bool leafPower;
     public bool pointPower;
     public bool fuelPower;
+    [Space(5)]
 
-    // Hint Text
+    [Header("UI")]
     public GameObject hintText;
-
-    // UI elements
     public GameObject fuelUI;
     public GameObject leafUI;
     public Image fuelUIFill;
     public Image leafUIFill;
+    public TMP_Text distance,height,velocity;
+    public string distanceBlurb = "Distance:";
+    public string heightBlurb = "Height: ";
+    public string velocityBlurb = "Velocity:";
+    public string unitBlurb = "m/s";
+    [Space(5)]
+
+    [Header("Reference Data")]
+    public Vector2 sampleStartPos;
+    public Vector2 posOffset = new Vector2(0f, -2.5f);
 
     // Sound trigger bools
     private bool soundWind,soundBounce,soundRocket,soundGerminate;
@@ -111,14 +127,20 @@ public class Seed_Controller : MonoBehaviour
         // set upgrade UI visuals
         fuelUI.SetActive(rocket);
         leafUI.SetActive(germination);
+
+        // set samples start position
+        sampleStartPos = new Vector2 (transform.position.x, transform.position.y);
+        sampleStartPos += posOffset;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Sound data (really scuffed)
         playSoundOnce();
 
-        if (Input.GetButtonDown("Jump"))
+        // If the player hits jump, start the game.
+        if (Input.GetButtonDown("Jump") && !rb.simulated)
         {
             hintText.SetActive(false);
             mainWind.SetActive(true);
@@ -126,159 +148,77 @@ public class Seed_Controller : MonoBehaviour
             rb.simulated = true;
         }
 
-        // Checks for colliders with the ground tag out .1 units from both sides of the player collider.
-        downRay = Physics2D.Raycast(transform.position, -Vector2.up, 0.6f, groundLayer);
+        groundedUpdate();
 
-        // Sets grounded to true or false based on if any colliders are found.
-        if (downRay.collider != null)
-        {
-            grounded = true;
-        }
-        else
-        {
-            grounded = false;
-        }
+        leafPowerUpdate();
 
-        // Allows rotation when not grounded
-        if (grounded == false)
-        {
-            float horizInput = Input.GetAxis("Horizontal");
-            horizInput = horizInput * (1 + (turnStab * turnStabBalance));
-
-            if (rb.angularVelocity < 100.0f && horizInput <= 0.0f)
-            {
-                rb.AddTorque(-horizInput);
-            }
-            else if (rb.angularVelocity > -100.0f && horizInput >= 0.0f)
-            {
-                rb.AddTorque(-horizInput);
-            }
-
-            germinatingBounce = false;
-        }
-        else if (germinatingBounce == false)
-        {
-            germinationCDTimer = Mathf.Min(20.0f - (2.0f * germinationCooldown), germinationCDTimer + 2.0f);
-            germinatingBounce = true;
-        }
-
-        // Leaf Power effect
-        if (leafPowerTimer > 0.0f)
-        {
-            leafPowerTimer -= Time.deltaTime;
-            sailModifier = 5.0f;
-        }
-        else
-        {
-            sailModifier = 3.5f;
-            leafPowerTimer = 0.0f;
-        }
-
-        // Rocket Time
-        if (rocket && fuelTank > 0.0f && Input.GetButton("Fire1") && rb.simulated)
-        {
-            rb.AddForce(transform.up * (2.0f + rocketStrength * 1.0f));
-            fuelTank -= Time.deltaTime / (1 + (fuelEfficency * fuelEffBalance));
-        }
-
-        // rocket ui visuals
         if (rocket)
-        {
-            fuelUIFill.fillAmount = fuelTank / (3.0f + (1.0f * rocketFuel));
-        }
+            rocketUpdate();
 
         // Jerma Nation
         if (germination)
-        {
-            if (germinationCDTimer > 0.0f)
-            {
-                germinationCDTimer -= Time.deltaTime;
-            }
-            else if (germinationTimer > 0.0f && Input.GetButtonDown("Fire2") && rb.simulated)
-            {
-                germinating = true;
-            }
-            else if (germinating == false)
-            {
-                germinationTimer = 1.0f + (0.5f * germinationDuration);
-                germinationCDTimer = 0.0f;
-            }
+            germinationUpdate();
 
-            if (germinating && germinationTimer > 0.0f)
-            {
-                germinationTimer -= Time.deltaTime;
+        clampUpdate();
 
-
-                rb.AddForce(Vector2.up * (3.0f + (jermaSpeed * jermaSpeedBalance)));
-
-                if (germinationTimer <= 0.0f)
-                {
-                    germinating = false;
-                    leafUIFill.fillAmount = 0f;
-                    germinationCDTimer = 15.0f - (2.0f * germinationCooldown);
-                }
-            }
-
-            leafUIFill.fillAmount = ((15f - (2.0f * germinationCooldown)) - germinationCDTimer) / (15f - (2.0f * germinationCooldown));
-        }
-
-        if(rb.velocity.y < (-velYClamp + (clamp * clampBalance)))
-        {
-            rb.velocity = new Vector2(rb.velocity.x, (-velYClamp + (clamp * clampBalance)));
-        }
+        uiUpdate();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        // Collects the Wind Power
-        if (collision.name == "WindPower(Clone)")
+        // Null check.
+        if(collision != null)
         {
-            collision.GetComponent<WindPowerScript>().Activate();
-        }
-        // Collects the Leaf Power
-        if (collision.name == "LeafPower(Clone)")
-        {
-            leafPowerTimer += 5.0f;
-            Destroy(collision.gameObject);
-        }
-        // Collects the Point Power
-        if (collision.name == "PointPower(Clone)")
-        {
-            sh.scoreBonus += (int)Math.Ceiling(50 * (1 + (sh.Markiplier * sh.MarkpilierEff)));
-            Destroy(collision.gameObject);
-        }
-        // Collects the Fuel Power
-        if (collision.name == "FuelPower(Clone)")
-        {
-            fuelTank += .5f;
-            Destroy(collision.gameObject);
-        }
-
-        // Catches the wind
-        if (collision.name == "Wind(Clone)")
-        {
-            rb.AddForce(collision.transform.right * collision.GetComponent<Wind_Script>().strength * (1.0f + windModifier * (float)wind));
-
-            // Calculates the sail effect
-            if (grounded == false)
+            // Collects the Wind Power
+            if (collision.name == "WindPower(Clone)")
             {
-                rb.AddForce(transform.up * (collision.GetComponent<Wind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
+                collision.GetComponent<WindPowerScript>().Activate();
+            }
+            // Collects the Leaf Power
+            if (collision.name == "LeafPower(Clone)")
+            {
+                leafPowerTimer += 5.0f;
+                Destroy(collision.gameObject);
+            }
+            // Collects the Point Power
+            if (collision.name == "PointPower(Clone)")
+            {
+                sh.scoreBonus += (int)Math.Ceiling(50 * (1 + (sh.Markiplier * sh.MarkpilierEff)));
+                Destroy(collision.gameObject);
+            }
+            // Collects the Fuel Power
+            if (collision.name == "FuelPower(Clone)")
+            {
+                fuelTank += .5f;
+                Destroy(collision.gameObject);
             }
 
-            inWind = true;
-
-        }
-        else if (collision.name == "MainWind")
-        {
-            rb.AddForce(collision.transform.right * collision.GetComponent<MainWind_Script>().strength * (1.0f + windModifier * (float)wind));
-
-            // Calculates the sail effect
-            if (grounded == false)
+            // Catches the wind
+            if (collision.name == "Wind(Clone)")
             {
-                rb.AddForce(transform.up * (collision.GetComponent<MainWind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
-            }
+                rb.AddForce(collision.transform.right * collision.GetComponent<Wind_Script>().strength * (1.0f + windModifier * (float)wind));
 
-            inWind = false;
+                // Calculates the sail effect
+                if (grounded == false)
+                {
+                    rb.AddForce(transform.up * (collision.GetComponent<Wind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
+                }
+
+                inWind = true;
+
+            }
+            else if (collision.name == "MainWind")
+            {
+                rb.AddForce(collision.transform.right * collision.GetComponent<MainWind_Script>().strength * (1.0f + windModifier * (float)wind));
+
+                // Calculates the sail effect
+                if (grounded == false)
+                {
+                    rb.AddForce(transform.up * (collision.GetComponent<MainWind_Script>().strength * Vector3.Dot(transform.up, collision.transform.right)) * ((float)sail * sailModifier));
+                }
+
+                inWind = false;
+            }
         }
     }
 
@@ -314,6 +254,110 @@ public class Seed_Controller : MonoBehaviour
         }
 
         return false;
+    }
+
+    void groundedUpdate()
+    {
+        // Checks for collisions with a raycast.
+        downRay = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, groundLayer);
+
+        // Sets grounded to true or false based on if any colliders are found.
+        if (downRay.collider != null)
+        {
+            grounded = true;
+        }
+
+        else
+        {
+            grounded = false;
+        }
+
+        // Allows rotation when not grounded
+        if (grounded == false)
+        {
+            float horizInput = Input.GetAxis("Horizontal");
+
+            // Add the powerups allowing multiplicitive rotations.
+            horizInput = horizInput * (1 + (turnStab * turnStabBalance));
+
+            // Rotates the player based on input.
+            if (rb.angularVelocity < 100.0f && horizInput <= 0.0f)
+            {
+                rb.AddTorque(-horizInput);
+            }
+            
+            else if (rb.angularVelocity > -100.0f && horizInput >= 0.0f)
+            {
+                rb.AddTorque(-horizInput);
+            }
+
+            germinatingBounce = false;
+        }
+
+        else if (germinatingBounce == false)
+        {
+            germinationCDTimer = Mathf.Min(20.0f - (2.0f * germinationCooldown), germinationCDTimer + 2.0f);
+            germinatingBounce = true;
+        }
+    }
+
+    void leafPowerUpdate()
+    {
+        // Leaf Power effect
+        if (leafPowerTimer > 0.0f)
+        {
+            leafPowerTimer -= Time.deltaTime;
+            sailModifier = 5.0f;
+        }
+
+        else
+        {
+            sailModifier = 3.5f;
+            leafPowerTimer = 0.0f;
+        }
+    }
+
+    void germinationUpdate()
+    {
+        if (germinationCDTimer > 0.0f)
+        {
+            germinationCDTimer -= Time.deltaTime;
+        }
+
+        else if (germinationTimer > 0.0f && Input.GetButtonDown("Fire2") && rb.simulated)
+        {
+            germinating = true;
+        }
+
+        else if (germinating == false)
+        {
+            germinationTimer = 1.0f + (0.5f * germinationDuration);
+            germinationCDTimer = 0.0f;
+        }
+
+        if (germinating && germinationTimer > 0.0f)
+        {
+            germinationTimer -= Time.deltaTime;
+
+            rb.AddForce(Vector2.up * (3.0f + (jermaSpeed * jermaSpeedBalance)));
+
+            if (germinationTimer <= 0.0f)
+            {
+                germinating = false;
+                leafUIFill.fillAmount = 0f;
+                germinationCDTimer = 15.0f - (2.0f * germinationCooldown);
+            }
+        }
+    }
+
+    void rocketUpdate()
+    {
+        // Rocket Time
+        if (rocket && fuelTank > 0.0f && Input.GetButton("Fire1") && rb.simulated)
+        {
+            rb.AddForce(transform.up * (2.0f + rocketStrength * 1.0f));
+            fuelTank -= Time.deltaTime / (1 + (fuelEfficency * fuelEffBalance));
+        }
     }
 
     void playSoundOnce()
@@ -383,5 +427,41 @@ public class Seed_Controller : MonoBehaviour
         {
             soundWind = false;
         }
+    }
+
+    void uiUpdate()
+    {   
+        // Update the leaf cooldown visual.
+        if(germination)
+            leafUIFill.fillAmount = ((15f - (2.0f * germinationCooldown)) - germinationCDTimer) / (15f - (2.0f * germinationCooldown));
+
+        // Update the rocket cooldown visual.
+        if(rocket)
+            fuelUIFill.fillAmount = fuelTank / (3.0f + (1.0f * rocketFuel));
+
+        // Update the distance text.
+        distance.text = distanceBlurb + " " + toNearestTenth((transform.position.x - sampleStartPos.x)).ToString();
+
+        // Update the height text.
+        height.text = heightBlurb + " " + toNearestTenth((transform.position.y - sampleStartPos.y)).ToString();
+
+        // Update the velocity text.
+        velocity.text = velocityBlurb + " " + toNearestTenth(rb.velocity.x).ToString() + unitBlurb;
+
+
+    }
+
+    void clampUpdate()
+    {
+        // Clamp data!
+        if(rb.velocity.y < (-velYClamp + (clamp * clampBalance)))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, (-velYClamp + (clamp * clampBalance)));
+        }
+    }
+
+    float toNearestTenth(float toRound)
+    {
+        return (float)(Mathf.RoundToInt((toRound * 10f)) / 10f);
     }
 }
