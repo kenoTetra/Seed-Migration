@@ -73,8 +73,12 @@ public class Seed_Controller : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource rocket_aud;
-    public AudioClip bounceClip,windClip,detatchClip,rocketClip;
-    public AudioClip germinationClip;
+    public AudioClip[] bounceClip;
+    public AudioClip[] windClip;
+    public AudioClip[] detatchClip;
+    public AudioClip rocketClip;
+    public AudioClip[] germinationClip;
+    public AudioSource ambienceAud;
     [Space(5)]
 
     [Header("Reference Data")]
@@ -151,7 +155,7 @@ public class Seed_Controller : MonoBehaviour
         {
             hintText.SetActive(false);
             mainWind.SetActive(true);
-            aud.PlayOneShot(detatchClip);
+            aud.PlayOneShot(detatchClip[UnityEngine.Random.Range(0, detatchClip.Length - 1)]);
             rb.simulated = true;
         }
 
@@ -169,6 +173,8 @@ public class Seed_Controller : MonoBehaviour
         clampUpdate();
 
         uiUpdate();
+
+        stopAmbience();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -375,7 +381,7 @@ public class Seed_Controller : MonoBehaviour
         if(grounded && !soundBounce)
         {
             // acorn bounce
-            aud.PlayOneShot(bounceClip);
+            aud.PlayOneShot(bounceClip[UnityEngine.Random.Range(0, bounceClip.Length - 1)]);
             soundBounce = true;
         }
 
@@ -419,7 +425,7 @@ public class Seed_Controller : MonoBehaviour
         if(germinationTimer > 0.0f && Input.GetButtonDown("Fire2") && !soundGerminate && rb.simulated)
         {
             // open sail
-            aud.PlayOneShot(germinationClip);
+            aud.PlayOneShot(germinationClip[UnityEngine.Random.Range(0, germinationClip.Length - 1)]);
             soundGerminate = true;
             animator.SetBool("LeafSpin", true);
         }
@@ -436,7 +442,7 @@ public class Seed_Controller : MonoBehaviour
         if(inWind && !soundWind)
         {
            // wind sound
-           aud.PlayOneShot(windClip);
+           aud.PlayOneShot(windClip[UnityEngine.Random.Range(0, windClip.Length - 1)]);
            soundWind = true;
         }
 
@@ -480,5 +486,18 @@ public class Seed_Controller : MonoBehaviour
     float toNearestTenth(float toRound)
     {
         return (float)(Mathf.RoundToInt((toRound * 10f)) / 10f);
+    }
+
+    void stopAmbience()
+    {
+        if(transform.position.y > 90f)
+        {
+            ambienceAud.Pause();
+        }
+
+        else if(!ambienceAud.isPlaying)
+        {
+            ambienceAud.Play();
+        }
     }
 }

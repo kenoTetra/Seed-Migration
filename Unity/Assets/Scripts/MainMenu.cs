@@ -18,13 +18,19 @@ public class MainMenu : MonoBehaviour
     public GameObject continueButton;
     [Space(5)]
 
+    [Header("Audio")]
+    public AudioClip clickClip;
+    public AudioClip backClip,hoverClip,startClip,continueClip,deleteClip;
+
     [Header("References")]
     private OptionsScript os;
+    public AudioSource aud;
 
     void Start()
     {
         os = FindObjectOfType<OptionsScript>();
         os.loadGraphics();
+        aud = GetComponent<AudioSource>();
 
         if(PlayerPrefs.HasKey("Score"))
         {
@@ -59,5 +65,35 @@ public class MainMenu : MonoBehaviour
     {
         startButton.SetActive(!startButton.activeSelf);
         continueButton.SetActive(!continueButton.activeSelf);
+    }
+
+    public void playHover()
+    {
+        aud.PlayOneShot(hoverClip);
+    }
+
+    public void playBack()
+    {
+        aud.PlayOneShot(backClip);
+    }
+
+    public void playClick()
+    {
+        aud.PlayOneShot(clickClip);
+    }
+
+    public void playStart()
+    {
+        aud.PlayOneShot(startClip);
+    }
+
+    public void playContinue()
+    {
+        aud.PlayOneShot(continueClip);
+    }
+
+    public void playDelete()
+    {
+        aud.PlayOneShot(deleteClip);
     }
 }

@@ -11,7 +11,7 @@ public class OptionsScript : MonoBehaviour
     public List<resItem> resolutions = new List<resItem>();
     private int resIndex;
     public TMP_Text resLabel;
-
+    
     void Start()
     {
         // find the player's current resolution and select it

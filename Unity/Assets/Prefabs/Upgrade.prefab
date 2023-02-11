@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 1108396814703550231}
   - component: {fileID: 4213963356017538280}
   - component: {fileID: 6967020972463479723}
+  - component: {fileID: 4685099467963860433}
   m_Layer: 5
   m_Name: Upgrade
   m_TagString: Untagged
@@ -596,9 +597,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1070628715933631079, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-          m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-          m_MethodName: onHover
+        - m_Target: {fileID: 6967020972463479723}
+          m_TargetAssemblyTypeName: UpgradeInfo, Assembly-CSharp
+          m_MethodName: playHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -624,8 +625,115 @@ MonoBehaviour:
   maxLevel: 4
   prefKey: 
   price: 5
+  multpVal: 2
+  expPriceInc: 0
+  unlockables: []
+  acornAnimator: {fileID: 0}
+  acornAnimBool: 0
+  acornAnimString: 
+  aud: {fileID: 4685099467963860433}
+  hoverClip: {fileID: 8300000, guid: 2d3686f792bceb94f8bb346100d02c0d, type: 3}
+  maxClip: {fileID: 8300000, guid: eb7c7cb522fe6e74bbe02f4349c64ced, type: 3}
+  buyClip: {fileID: 8300000, guid: 4eccd7e076d309945bbe71db915a8e3a, type: 3}
   title: Sail
   body: Catch the wind with this upgrade! Lets you glide.
+  isMaxLevel: 0
+--- !u!82 &4685099467963860433
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108396814703550317}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 74a2eef6dda2b9e48b0eaf1230292fc0, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1108396814765737254
 GameObject:
   m_ObjectHideFlags: 0

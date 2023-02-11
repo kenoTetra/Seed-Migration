@@ -20,6 +20,12 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private int priceSaved;
     [Space(5)]
 
+    [Header("Audio")]
+    public AudioSource aud;
+    public AudioClip hoverClip,maxClip,buyClip;
+    
+    [Space(5)]
+
     [Header("Tooltip Information")]
     public string title = "This is a title";
     public string body = "This is the body";
@@ -205,5 +211,20 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             TooltipHandler.instance.setShowTooltip(title, body, "MAX!", animator.GetInteger("Level"));
         }
+    }
+
+    public void playHover()
+    {
+        aud.PlayOneShot(hoverClip);
+    }
+
+    public void playBuy()
+    {
+        aud.PlayOneShot(buyClip);
+    }
+
+    public void playMax()
+    {
+        aud.PlayOneShot(maxClip);
     }
 }

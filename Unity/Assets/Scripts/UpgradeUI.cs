@@ -7,10 +7,16 @@ using TMPro;
 public class UpgradeUI : MonoBehaviour
 {
     // Panels
+    [Header("Panels and Data")]
     public GameObject[] upgradePanels;
     public TMP_Text scoreText;
     public string scoreHeader = "Score :";
     public int score = 0;
+    [Space(5)]
+
+    [Header("Audio")]
+    public AudioSource aud;
+    public AudioClip hoverClip,clickClip,startClip,menuClip;
 
     void Start()
     {
@@ -48,5 +54,25 @@ public class UpgradeUI : MonoBehaviour
         score += amount;
         updateScoreText();
         PlayerPrefs.SetInt("Score", score);
+    }
+
+    public void playStart()
+    {
+        aud.PlayOneShot(startClip);
+    }
+
+    public void playHover()
+    {
+        aud.PlayOneShot(hoverClip);
+    }
+
+    public void playClick()
+    {
+        aud.PlayOneShot(clickClip);
+    }
+
+    public void playMenu()
+    {
+        aud.PlayOneShot(menuClip);
     }
 }

@@ -19,6 +19,11 @@ public class TimeoutHandler : MonoBehaviour
     private bool canTimeout;
     [Space(5)]
 
+    [Header("Audio")]
+    public AudioSource aud;
+    public AudioSource mus_aud,ambi_aud;
+    public AudioClip returnClip;
+
     // private playonce
     private bool soundTimer;
 
@@ -53,7 +58,7 @@ public class TimeoutHandler : MonoBehaviour
         {
             soundTimer = false;
             timer = 0f;
-            stopClock();
+            aud.Stop();
             StopCoroutine(timeoutPlayer());
             StartCoroutine(preventTimeout());
         }
@@ -71,6 +76,7 @@ public class TimeoutHandler : MonoBehaviour
         {
             // clock ticking noise
             soundTimer = true;
+            aud.Play();
         }
 
         // if you hit timeout time, push score and go to upgrades
@@ -78,8 +84,9 @@ public class TimeoutHandler : MonoBehaviour
         {
             sh.pushScore();
             th.changeScene("UpgradeMenu");
-            // stop music
-            // return to shop sound
+            mus_aud.Stop();
+            ambi_aud.Stop();
+            aud.PlayOneShot(returnClip);
             timedOut = true;
             yield break;
         }
@@ -94,10 +101,5 @@ public class TimeoutHandler : MonoBehaviour
         canTimeout = true;
 
         yield break;
-    }
-
-    void stopClock()
-    {
-        // stop clock sound
     }
 }

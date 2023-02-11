@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 115031173}
   - component: {fileID: 115031172}
   - component: {fileID: 115031176}
+  - component: {fileID: 115031177}
   m_Layer: 5
   m_Name: UpgradeUI
   m_TagString: Untagged
@@ -466,6 +467,107 @@ MonoBehaviour:
   scoreText: {fileID: 192956150}
   scoreHeader: 'Score: '
   score: 0
+  aud: {fileID: 115031177}
+  hoverClip: {fileID: 8300000, guid: 2d3686f792bceb94f8bb346100d02c0d, type: 3}
+  clickClip: {fileID: 8300000, guid: 72f7c6221f0168943b8697f0d14deb84, type: 3}
+  startClip: {fileID: 8300000, guid: 11416150cd3d84e44abf5a0575e65f43, type: 3}
+  menuClip: {fileID: 8300000, guid: d3e5eb5a889bdca49880d4c8ff300595, type: 3}
+--- !u!82 &115031177
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115031171}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &120787573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1106,7 @@ GameObject:
   - component: {fileID: 202901094}
   - component: {fileID: 202901093}
   - component: {fileID: 202901092}
+  - component: {fileID: 202901098}
   m_Layer: 5
   m_Name: Leaves Upgrade
   m_TagString: Untagged
@@ -1054,6 +1157,10 @@ MonoBehaviour:
   acornAnimator: {fileID: 0}
   acornAnimBool: 0
   acornAnimString: 
+  aud: {fileID: 202901098}
+  hoverClip: {fileID: 8300000, guid: 2d3686f792bceb94f8bb346100d02c0d, type: 3}
+  maxClip: {fileID: 8300000, guid: eb7c7cb522fe6e74bbe02f4349c64ced, type: 3}
+  buyClip: {fileID: 8300000, guid: 4eccd7e076d309945bbe71db915a8e3a, type: 3}
   title: Is it fall yet?
   body: Unlocks a pickup that increases your sail upgrade by 1 (can go over max!)
     for a short time.
@@ -1075,9 +1182,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1070628715933631079, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-          m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-          m_MethodName: onHover
+        - m_Target: {fileID: 202901092}
+          m_TargetAssemblyTypeName: UpgradeInfo, Assembly-CSharp
+          m_MethodName: playHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1201,6 +1308,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202901090}
   m_CullTransparentMesh: 1
+--- !u!82 &202901098
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202901090}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &319968402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1419,7 @@ GameObject:
   - component: {fileID: 319968406}
   - component: {fileID: 319968405}
   - component: {fileID: 319968404}
+  - component: {fileID: 319968410}
   m_Layer: 5
   m_Name: Germination Upgrade
   m_TagString: Untagged
@@ -1268,6 +1472,10 @@ MonoBehaviour:
   acornAnimator: {fileID: 853494289}
   acornAnimBool: 1
   acornAnimString: Leaf
+  aud: {fileID: 319968410}
+  hoverClip: {fileID: 8300000, guid: 2d3686f792bceb94f8bb346100d02c0d, type: 3}
+  maxClip: {fileID: 8300000, guid: eb7c7cb522fe6e74bbe02f4349c64ced, type: 3}
+  buyClip: {fileID: 8300000, guid: 4eccd7e076d309945bbe71db915a8e3a, type: 3}
   title: Germination
   body: Propell yourself upwards with this upgrade. Sprouts a leaf from your acorn
     which allows you to fly like a helicopter for a small period of time by pressing
@@ -1290,9 +1498,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1070628715933631079, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-          m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-          m_MethodName: onHover
+        - m_Target: {fileID: 319968404}
+          m_TargetAssemblyTypeName: UpgradeInfo, Assembly-CSharp
+          m_MethodName: playHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1416,6 +1624,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319968402}
   m_CullTransparentMesh: 1
+--- !u!82 &319968410
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319968402}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &368851556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,67 +1889,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422631097}
   m_CullTransparentMesh: 1
---- !u!1001 &428985805
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5017701723959501772, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: data.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 3d1d082fd3921d8439107b727e35aa84, type: 2}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501773, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017701723959501775, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
-      propertyPath: m_Name
-      value: WwiseGlobal
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 86593aa6bd9d61440874d595762b0175, type: 3}
 --- !u!1 &465533093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,17 +2273,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: -10, y: -11}
   m_UseGraphicAlpha: 1
---- !u!114 &521879256 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1070628715933631079, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-  m_PrefabInstance: {fileID: 711549960}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82381585c02744e47b916ba414cece7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &537526647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2260,6 +2492,7 @@ GameObject:
   - component: {fileID: 565733526}
   - component: {fileID: 565733525}
   - component: {fileID: 565733527}
+  - component: {fileID: 565733528}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -2382,9 +2615,9 @@ MonoBehaviour:
           m_StringArgument: Level
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 521879256}
-        m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-        m_MethodName: onStart
+      - m_Target: {fileID: 115031176}
+        m_TargetAssemblyTypeName: UpgradeUI, Assembly-CSharp
+        m_MethodName: playStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2394,6 +2627,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &565733528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565733523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 115031176}
+          m_TargetAssemblyTypeName: UpgradeUI, Assembly-CSharp
+          m_MethodName: playHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &588775236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,111 +3362,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666619512}
   m_CullTransparentMesh: 1
---- !u!1 &677803553
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 677803555}
-  - component: {fileID: 677803554}
-  m_Layer: 0
-  m_Name: UpgradesHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &677803554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677803553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72349c636042f74bb9ebc03865f8260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &677803555
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677803553}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &711549960
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1070628715933631077, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: data.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: bf8b3e727a365274ba10ef84912c3144, type: 2}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 500.14096
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 248.906
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.918061
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631078, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070628715933631082, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-      propertyPath: m_Name
-      value: WWiseEvents
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
 --- !u!1 &732258017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3293,6 +3450,7 @@ GameObject:
   - component: {fileID: 733860594}
   - component: {fileID: 733860593}
   - component: {fileID: 733860592}
+  - component: {fileID: 733860595}
   m_Layer: 5
   m_Name: Upgrade Button
   m_TagString: Untagged
@@ -3377,9 +3535,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 521879256}
-        m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-        m_MethodName: onClick
+      - m_Target: {fileID: 115031176}
+        m_TargetAssemblyTypeName: UpgradeUI, Assembly-CSharp
+        m_MethodName: playClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3427,6 +3585,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733860590}
   m_CullTransparentMesh: 1
+--- !u!114 &733860595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733860590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 115031176}
+          m_TargetAssemblyTypeName: UpgradeUI, Assembly-CSharp
+          m_MethodName: playHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &765269286
 GameObject:
   m_ObjectHideFlags: 0
@@ -4005,6 +4192,134 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &914328379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 914328381}
+  - component: {fileID: 914328380}
+  m_Layer: 0
+  m_Name: Shop Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &914328380
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914328379}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8478354602806837950, guid: 74a2eef6dda2b9e48b0eaf1230292fc0, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 6db7816599843144aa8fa0a82b888d8b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &914328381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914328379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 133.8669, y: 174.13754, z: 2.406467}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &931243619
 GameObject:
   m_ObjectHideFlags: 0
@@ -4963,6 +5278,7 @@ GameObject:
   - component: {fileID: 1236982449}
   - component: {fileID: 1236982448}
   - component: {fileID: 1236982450}
+  - component: {fileID: 1236982451}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -5085,9 +5401,9 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 521879256}
-        m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-        m_MethodName: onReturn
+      - m_Target: {fileID: 115031176}
+        m_TargetAssemblyTypeName: UpgradeUI, Assembly-CSharp
+        m_MethodName: playMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5097,6 +5413,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1236982451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236982446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 115031176}
+          m_TargetAssemblyTypeName: UpgradeUI, Assembly-CSharp
+          m_MethodName: playHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &1243921458 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1108396814703550316, guid: 11cc8bb6aa8706947a4ae1f6b5e5b46b, type: 3}
@@ -5654,6 +5999,7 @@ GameObject:
   - component: {fileID: 1540787108}
   - component: {fileID: 1540787107}
   - component: {fileID: 1540787106}
+  - component: {fileID: 1540787112}
   m_Layer: 5
   m_Name: Fuel Upgrade
   m_TagString: Untagged
@@ -5704,6 +6050,10 @@ MonoBehaviour:
   acornAnimator: {fileID: 0}
   acornAnimBool: 0
   acornAnimString: 
+  aud: {fileID: 1540787112}
+  hoverClip: {fileID: 8300000, guid: 2d3686f792bceb94f8bb346100d02c0d, type: 3}
+  maxClip: {fileID: 8300000, guid: eb7c7cb522fe6e74bbe02f4349c64ced, type: 3}
+  buyClip: {fileID: 8300000, guid: 4eccd7e076d309945bbe71db915a8e3a, type: 3}
   title: Heilium-infused Fuel
   body: Unlocks a pickup that restores half a unit of fuel.
   isMaxLevel: 0
@@ -5724,9 +6074,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1070628715933631079, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-          m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-          m_MethodName: onHover
+        - m_Target: {fileID: 1540787106}
+          m_TargetAssemblyTypeName: UpgradeInfo, Assembly-CSharp
+          m_MethodName: playHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5850,6 +6200,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540787104}
   m_CullTransparentMesh: 1
+--- !u!82 &1540787112
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540787104}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1614584613
 GameObject:
   m_ObjectHideFlags: 0
@@ -5937,7 +6383,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1619171170}
   - component: {fileID: 1619171169}
-  - component: {fileID: 1619171172}
   - component: {fileID: 1619171171}
   m_Layer: 0
   m_Name: Main Camera
@@ -6004,42 +6449,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1619171171
-MonoBehaviour:
+--- !u!81 &1619171171
+AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619171167}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed903ba4f86bc22489d08431b5269938, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDefaultListener: 1
-  listenerId: 0
---- !u!114 &1619171172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619171167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d9c4c3a87ebf63419c7e1a23025a4b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 0
-  isStaticObject: 0
-  m_positionOffsetData:
-    KeepMe: 0
-    positionOffset: {x: 0, y: 0, z: 0}
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
 --- !u!1 &1643959941
 GameObject:
   m_ObjectHideFlags: 0
@@ -6927,6 +7344,7 @@ GameObject:
   - component: {fileID: 1811025774}
   - component: {fileID: 1811025773}
   - component: {fileID: 1811025772}
+  - component: {fileID: 1811025778}
   m_Layer: 5
   m_Name: Genome Pickup Upgrade
   m_TagString: Untagged
@@ -6978,6 +7396,10 @@ MonoBehaviour:
   acornAnimator: {fileID: 0}
   acornAnimBool: 0
   acornAnimString: 
+  aud: {fileID: 1811025778}
+  hoverClip: {fileID: 8300000, guid: 2d3686f792bceb94f8bb346100d02c0d, type: 3}
+  maxClip: {fileID: 8300000, guid: eb7c7cb522fe6e74bbe02f4349c64ced, type: 3}
+  buyClip: {fileID: 8300000, guid: 4eccd7e076d309945bbe71db915a8e3a, type: 3}
   title: Pollen Nation
   body: Unlocks a pickup that gives you 100 points on pickup!
   isMaxLevel: 0
@@ -6998,9 +7420,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1070628715933631079, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-          m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-          m_MethodName: onHover
+        - m_Target: {fileID: 1811025772}
+          m_TargetAssemblyTypeName: UpgradeInfo, Assembly-CSharp
+          m_MethodName: playHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7124,6 +7546,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811025770}
   m_CullTransparentMesh: 1
+--- !u!82 &1811025778
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811025770}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1849707889
 GameObject:
   m_ObjectHideFlags: 0
@@ -7329,6 +7847,7 @@ GameObject:
   - component: {fileID: 1878054486}
   - component: {fileID: 1878054485}
   - component: {fileID: 1878054484}
+  - component: {fileID: 1878054490}
   m_Layer: 5
   m_Name: Air Current Upgrade
   m_TagString: Untagged
@@ -7379,6 +7898,10 @@ MonoBehaviour:
   acornAnimator: {fileID: 0}
   acornAnimBool: 0
   acornAnimString: 
+  aud: {fileID: 1878054490}
+  hoverClip: {fileID: 8300000, guid: 2d3686f792bceb94f8bb346100d02c0d, type: 3}
+  maxClip: {fileID: 8300000, guid: eb7c7cb522fe6e74bbe02f4349c64ced, type: 3}
+  buyClip: {fileID: 8300000, guid: 4eccd7e076d309945bbe71db915a8e3a, type: 3}
   title: Dandelion Lift
   body: Unlocks a pickup that makes an air current on your location that's in the
     perfect conditions!
@@ -7400,9 +7923,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1070628715933631079, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-          m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-          m_MethodName: onHover
+        - m_Target: {fileID: 1878054484}
+          m_TargetAssemblyTypeName: UpgradeInfo, Assembly-CSharp
+          m_MethodName: playHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7526,6 +8049,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878054482}
   m_CullTransparentMesh: 1
+--- !u!82 &1878054490
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878054482}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1890465654
 GameObject:
   m_ObjectHideFlags: 0
@@ -8227,6 +8846,7 @@ GameObject:
   - component: {fileID: 1108396814980829531}
   - component: {fileID: 4213963356261792420}
   - component: {fileID: 6967020972221060583}
+  - component: {fileID: 6967020972221060584}
   m_Layer: 5
   m_Name: Rocket Upgrade
   m_TagString: Untagged
@@ -8581,9 +9201,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1070628715933631079, guid: 16f122e1991fb2b4bb8de3e1bbdaf543, type: 3}
-          m_TargetAssemblyTypeName: WWiseEvents, Assembly-CSharp
-          m_MethodName: onHover
+        - m_Target: {fileID: 6967020972221060583}
+          m_TargetAssemblyTypeName: UpgradeInfo, Assembly-CSharp
+          m_MethodName: playHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -8618,7 +9238,107 @@ MonoBehaviour:
   acornAnimator: {fileID: 853494289}
   acornAnimBool: 1
   acornAnimString: Rocket
+  aud: {fileID: 6967020972221060584}
+  hoverClip: {fileID: 8300000, guid: 2d3686f792bceb94f8bb346100d02c0d, type: 3}
+  maxClip: {fileID: 8300000, guid: eb7c7cb522fe6e74bbe02f4349c64ced, type: 3}
+  buyClip: {fileID: 8300000, guid: 4eccd7e076d309945bbe71db915a8e3a, type: 3}
   title: Rocket Booster
   body: Show off your technological might with this upgrade! Straps a rocket booster
     to your acorn which can be activated by pressing 1.
   isMaxLevel: 0
+--- !u!82 &6967020972221060584
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108396814980829473}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
