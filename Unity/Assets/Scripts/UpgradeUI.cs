@@ -26,6 +26,7 @@ public class UpgradeUI : MonoBehaviour
         }
 
         updateScoreText();
+        PlayerPrefs.Save();
     }
 
     public void openMenu(int menuNumber)
@@ -74,5 +75,10 @@ public class UpgradeUI : MonoBehaviour
     public void playMenu()
     {
         aud.PlayOneShot(menuClip);
+    }
+
+    public void savePrefs()
+    {
+        PlayerPrefs.Save();
     }
 }
