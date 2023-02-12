@@ -22,7 +22,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     [Header("Audio")]
     public AudioSource aud;
-    public AudioClip hoverClip,maxClip,buyClip;
+    public AudioClip hoverClip,maxClip,buyClip,poorClip;
     
     [Space(5)]
 
@@ -57,6 +57,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             {
                 // Sound!
                 Debug.Log("i bought dick for three ninty nine");
+                playBuy();
                 // buy sound here
 
                 // Info update
@@ -107,6 +108,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             {
                 Debug.Log("you're ALREADY rich dude, fuck off!!!");
                 // shop max sound
+                playMax();
             }  
         }
 
@@ -114,6 +116,7 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             Debug.Log("YOU''RE FUCKING POOR");
             // menu cancel sound
+            playPoor();
         }
 
     }
@@ -226,5 +229,10 @@ public class UpgradeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void playMax()
     {
         aud.PlayOneShot(maxClip);
+    }
+
+    public void playPoor()
+    {
+        aud.PlayOneShot(poorClip);
     }
 }
